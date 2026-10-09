@@ -1,0 +1,8 @@
+{
+  "version": "0.1.2",
+  "url": "HotdogTV-Setup-0.1.2.exe",
+  "sha256": "26b49ef0cdf37af99cfbfd29640a8d9d2acab91a9e09ae74e5e4d3cff34cbd57",
+  "size": 26649894,
+  "notes": "Recent channels (History, and the strip on the info bar) now show as many as Recent Channel Count is set to - they showed one fewer - and more are remembered behind them, so the list stays full when a channel goes.",
+  "released": "2026-10-08T00:24:16.825Z"
+}

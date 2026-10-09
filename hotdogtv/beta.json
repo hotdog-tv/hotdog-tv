@@ -1,0 +1,10 @@
+{
+  "versionCode": 21,
+  "versionName": "0.10.2",
+  "apk": "hotdogtv-0.10.2.apk",
+  "sha256": "cb879068be067ccb32e5cda3eada8d7a56b3daa41c2cca6e3c4bbc63e3908b9f",
+  "size": 7369291,
+  "notes": "Beta: a new channels list with a preview mode, Report a Problem under Settings › Other (send the developer what your device is doing), prompts before deleting recordings and reminders, and holding Up or Down to look through channels. Full list: https://dl.auiptv.xyz/hotdogtv/changelog-beta",
+  "changelog": "changelog-beta",
+  "released": "2026-10-09T07:26:50.202Z"
+}

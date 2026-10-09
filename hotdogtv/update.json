@@ -1,0 +1,10 @@
+{
+  "versionCode": 20,
+  "versionName": "0.10.1",
+  "apk": "hotdogtv-0.10.1.apk",
+  "sha256": "0745b767d592fdaded5137adf0fffe619f1acc39ab9036791a74167339de4368",
+  "size": 7346327,
+  "notes": "Previous and Next episode buttons; recordings marked in the TV Guide and on the info bar, with their episode details; a shorter TV Guide menu; a guide that fills in as you scroll; recordings set from the TV Guide now record, and recordings can be skipped through. Earlier versions can't be put back over this one. Full list: https://dl.auiptv.xyz/hotdogtv/changelog",
+  "changelog": "changelog",
+  "released": "2026-10-08T13:37:21.583Z"
+}

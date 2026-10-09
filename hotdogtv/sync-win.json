@@ -1,0 +1,8 @@
+{
+  "version": "0.5.1",
+  "url": "HotdogTV-Sync-Setup-0.5.1.exe",
+  "sha256": "e777d48c66b7b9df0d4d2ebb864312a21ee105a38236e43d53e9762780d2fe88",
+  "size": 10263502,
+  "notes": "Takes problem reports sent from the TV app (Settings › Other › Report a Problem) and lists them under Admin › Problem reports.",
+  "released": "2026-10-09T06:47:16.589Z"
+}
