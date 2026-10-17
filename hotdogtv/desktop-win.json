@@ -1,0 +1,8 @@
+{
+  "version": "0.1.5",
+  "url": "HotdogTV-Setup-0.1.5.exe",
+  "sha256": "c3ce340f9d1f4b9b74c0a8f318081831f670ebb2a6e9e6b5bfca3b5e957ff730",
+  "size": 27626867,
+  "notes": "Clicking a card or panel no longer also presses the button behind it, and the playback buttons fit beside the channel list.",
+  "released": "2026-10-17T09:12:37.520Z"
+}

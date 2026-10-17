@@ -1,0 +1,8 @@
+{
+  "version": "0.1.5",
+  "url": "HotdogTV-0.1.5-mac.zip",
+  "sha256": "21291ebe8474fa1f2b2693e1b668fba4f18a9a94b3696f244830bdd4a7d2e2ea",
+  "size": 71052943,
+  "notes": "Clicking a card or panel no longer also presses the button behind it, and the playback buttons fit beside the channel list.",
+  "released": "2026-10-17T09:19:28.334Z"
+}

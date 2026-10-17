@@ -1,0 +1,25 @@
+{
+  "version": "0.5.4",
+  "url": "HotdogTV-Sync-0.5.4-linux-amd64.tar.gz",
+  "sha256": "d47ec004d79b31dd28f5d063fb36183e789f74d96611f75e4dc76c5235918923",
+  "size": 5573326,
+  "notes": "First Linux release: runs as a service on any Linux with systemd — 64-bit PCs, 64-bit ARM (Raspberry Pi 4/5) and 32-bit ARM.",
+  "released": "2026-10-17T13:28:01.900Z",
+  "files": {
+    "amd64": {
+      "url": "HotdogTV-Sync-0.5.4-linux-amd64.tar.gz",
+      "sha256": "d47ec004d79b31dd28f5d063fb36183e789f74d96611f75e4dc76c5235918923",
+      "size": 5573326
+    },
+    "arm64": {
+      "url": "HotdogTV-Sync-0.5.4-linux-arm64.tar.gz",
+      "sha256": "8fff7c10083a1e753aece93e95e115d7c622eee7aee607524691d10a0d30a1d9",
+      "size": 5146998
+    },
+    "armv7": {
+      "url": "HotdogTV-Sync-0.5.4-linux-armv7.tar.gz",
+      "sha256": "dc60eb98f3fbf9963e2dc69183385cb9d1247f76a56b6d437c47e66f39dd574e",
+      "size": 5295353
+    }
+  }
+}

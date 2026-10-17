@@ -1,0 +1,8 @@
+{
+  "version": "0.1.5",
+  "url": "HotdogTV-0.1.5-x86_64.AppImage",
+  "sha256": "9dfcd2a0e6593992c3cfac96efe3d9a51923c9c5a5c427f8eacae7d42f37e7ad",
+  "size": 60393976,
+  "notes": "Clicking a card or panel no longer also presses the button behind it, and the playback buttons fit beside the channel list.",
+  "released": "2026-10-17T09:15:57.130Z"
+}

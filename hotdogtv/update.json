@@ -1,0 +1,10 @@
+{
+  "versionCode": 27,
+  "versionName": "0.11.4",
+  "apk": "hotdogtv-0.11.4.apk",
+  "sha256": "03307e670b06896ebe48907a1fb4226a7ff2b3b4a962947ceb7e8ff18c942e64",
+  "size": 7729195,
+  "notes": "A new Hotdog TV logo, and readable words on the Focus Colour. Full list: https://dl.auiptv.xyz/hotdogtv/changelog",
+  "changelog": "changelog",
+  "released": "2026-10-17T07:58:06.013Z"
+}
