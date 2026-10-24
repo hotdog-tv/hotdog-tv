@@ -1,0 +1,25 @@
+{
+  "version": "0.5.6",
+  "url": "HotdogTV-Sync-0.5.6-linux-amd64.tar.gz",
+  "sha256": "3d2bb73847498d4511ea12266a381ad1de8721bcacd248384a503bfd58b88fdf",
+  "size": 5601669,
+  "notes": "The portal's Remote control has a Long setting for every button and the new History and description actions; Settings has Search and History in Preview Mode. Now for Mac too.",
+  "released": "2026-10-24T09:10:54.473Z",
+  "files": {
+    "amd64": {
+      "url": "HotdogTV-Sync-0.5.6-linux-amd64.tar.gz",
+      "sha256": "3d2bb73847498d4511ea12266a381ad1de8721bcacd248384a503bfd58b88fdf",
+      "size": 5601669
+    },
+    "arm64": {
+      "url": "HotdogTV-Sync-0.5.6-linux-arm64.tar.gz",
+      "sha256": "ca2740f630fc2e2592ca6d018ef633f3f7bae70be56ed89add5cdea7090b5a71",
+      "size": 5174226
+    },
+    "armv7": {
+      "url": "HotdogTV-Sync-0.5.6-linux-armv7.tar.gz",
+      "sha256": "754a83b89bac8542f3a5acc324b0dddabae6a90c706cdd82e87e833c41d710ec",
+      "size": 5324942
+    }
+  }
+}
