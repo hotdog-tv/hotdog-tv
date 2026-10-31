@@ -1,0 +1,8 @@
+{
+  "version": "0.2.3",
+  "url": "HotdogTV-Setup-0.2.3.exe",
+  "sha256": "26f4144d5ef4bf5fe269789a21c81159cf172bb2ccca89619dbadc70d867a5f9",
+  "size": 27948932,
+  "notes": "Live channels that go silent or drop are reopened by themselves; press Play to try again after a failure; series specials come last.",
+  "released": "2026-10-31T09:30:50.575Z"
+}

@@ -1,0 +1,10 @@
+{
+  "versionCode": 47,
+  "versionName": "0.12.16",
+  "apk": "hotdogtv-0.12.16.apk",
+  "sha256": "7f0eb83b5ce9653558523897147f396649e40b87a9c63ee88b27b890ff46a046",
+  "size": 7989719,
+  "notes": "Fixes channels that share a guide (HD and UHD) both showing a recording made on one. Also has 0.12.15's Record what follows and back-to-back recording fix. Full list: https://dl.auiptv.xyz/hotdogtv/changelog-beta",
+  "changelog": "changelog-beta",
+  "released": "2026-10-31T13:16:24.503Z"
+}

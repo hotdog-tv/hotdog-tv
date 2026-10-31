@@ -1,0 +1,6 @@
+{
+  "version": "0.5.10",
+  "image": "ghcr.io/hotdog-tv/hotdogtv-sync:0.5.10",
+  "notes": "Portal: open a series to see its seasons and episodes, with how far you have watched each.",
+  "released": "2026-10-31T09:30:20.733Z"
+}

@@ -1,0 +1,10 @@
+{
+  "versionCode": 45,
+  "versionName": "0.12.14",
+  "apk": "hotdogtv-0.12.14.apk",
+  "sha256": "c5d327cce6ed7863dfacfd278dfa283c84271b34d74948e4379a1f7f5c231c6b",
+  "size": 7983859,
+  "notes": "Specials now come last and stay out of Next episode; press Play to try again after a stream fails. Full list: https://dl.auiptv.xyz/hotdogtv/changelog",
+  "changelog": "changelog",
+  "released": "2026-10-31T09:28:55.280Z"
+}

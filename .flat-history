@@ -1,0 +1,2 @@
+This repository holds published downloads only and is kept to a single commit:
+scripts/publish-repo.js in the app's source rewrites it at every release. Do not build on its history.

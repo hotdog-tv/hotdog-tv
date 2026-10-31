@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hotdog TV — What's New</title>
+<style>
+  :root { --bg: #ffffff; --fg: #1a1a1a; --muted: #5f6368; --accent: #2563eb; --rule: #e5e7eb; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #111214; --fg: #ececec; --muted: #9aa0a6; --accent: #7aa7ff; --rule: #2a2c30; }
+  }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 680px; margin: 0 auto; padding: 28px 16px 48px; }
+  h1 { font-size: 1.6rem; margin: 0 0 4px; }
+  h2 { font-size: 1.3rem; margin: 32px 0 4px; padding-top: 16px; border-top: 1px solid var(--rule); color: var(--accent); }
+  h3 { font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 20px 0 6px; }
+  ul { margin: 0; padding-left: 1.2em; }
+  li { margin: 6px 0; }
+  strong { font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+<h1>Hotdog TV — What's New</h1>
+<h2>0.12.14</h2>
+<h3>Improved</h3>
+<ul>
+<li><strong>Specials come last</strong> — a series' Season 0 is now called Specials and sits after the last season, instead of opening the series. Next episode, Previous and Next Up stay within the seasons and never jump into or out of a special.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li><strong>Play after "Unable to reconnect"</strong> — with the error on screen, press Play to try the channel or film again (a film from where it got to). Before, the only way back was to leave it and start again.</li>
+</ul>
+<h2>0.12.13</h2>
+<h3>Fixed</h3>
+<ul>
+<li><strong>Crashing a minute after starting, over and over</strong> — on a 2 GB box (the Shield) with a very big Movies &amp; Series list, the update after a provider rebuilt its library ran out of memory and the app closed. The update was lost, so the next start tried again and closed again. Finding favourites and Continue Watching their new numbers now uses far less memory, and the app may use more of the box's memory when it needs to.</li>
+</ul>
+<h3>New</h3>
+<ul>
+<li><strong>Jellyfin and Silo</strong> — add your own media server's films and series: Settings › Playlists › Add Playlist › Add Jellyfin or Silo (or Jellyfin or Silo in first-run setup). Sign in with Quick Connect (the TV shows a code to approve from a phone or computer) or a username and password. They appear in Movies &amp; Shows with their posters, details and episodes, and play the file as it is on the server. Where you got to goes back to the server, so other Jellyfin apps carry on from there, and what you watched in them shows here. Silo connects through its Jellyfin-compatible address (films and series only; for a Silo profile, sign in as name#Profile).</li>
+<li><strong>Films and series only?</strong> With no live channels at all, the app opens in Movies (or Shows) instead of an empty TV guide.</li>
+<li><strong>Quick Connect for Sync</strong> — in first-run setup and Settings › Sync, the TV shows a 6-digit code: type it into the sync portal's Dashboard (or scan the QR code) and the TV is paired, no sync code to copy. Needs Sync Server 0.5.9.</li>
+<li><strong>Customise in setup</strong> — after signing in with Sync, choose Customise to set this TV's own look and guide, playback, remote and parental controls, starting from your shared settings or the defaults. What you change becomes this TV's own; everything else keeps following your other devices.</li>
+</ul>
+<h2>0.12.12</h2>
+<h3>Fixed</h3>
+<ul>
+<li><strong>Favourites and Continue Watching survive a provider's rebuild</strong> — when a provider rebuilds its Movies or Series, every film, series and episode gets a new number, and favourites, Continue Watching, Next Up and watched ticks disappeared. They now follow each film or series to its new number, matched by its TMDB id or, failing that, by a title only one item has. Films and series lost this way before this version are found again once every playlist has loaded.</li>
+</ul>
+<h3>New</h3>
+<ul>
+<li><strong>Moved Films &amp; Series</strong> — Settings › Playlists › Moved Films &amp; Series lists anything that couldn't be matched for sure: pick the right one where several share a title, search for it by name, or remove it. Recent Moves shows what was moved and lets you change it.</li>
+</ul>
+<h2>0.12.11</h2>
+<h3>New</h3>
+<ul>
+<li><strong>Parental controls</strong> — Settings › Parental Controls, as in TiviMate: a 4-digit PIN for blocked channels and groups (hold OK on one and choose Block), and — your choice — for Settings, its Playlists and EPG pages, and the channel and group menus. A blocked channel shows a padlock instead of the picture: press OK and enter the PIN. Choose how long an unlock lasts, and whether the PIN is typed with number keys or picked with Up/Down.</li>
+<li><strong>More than one PIN</strong> — the Main PIN opens everything. Add other PINs, each opening only what you tick for it: Settings pages, the menus, and which blocked groups and channels it can watch. A PIN that can't open something asks for one that can.</li>
+<li><strong>Adult content blocked automatically</strong> — groups named Adult, XXX, Porn, Erotic or 18+, and channels, films and series your provider marks as adult, are blocked as soon as parental controls are on. Let any through from Parental Controls › Blocked Channels and Groups.</li>
+<li><strong>Blocked films and shows stay hidden</strong> — in Movies &amp; Shows and Search their posters and titles read "Blocked" until a PIN is given. Recordings and downloads of anything blocked need the PIN too.</li>
+<li><strong>Forgotten PIN?</strong> With the sync server, set a new Main PIN for the TV in the portal (Settings, choose the device; needs Sync Server 0.5.8). Parental controls are kept on the server as each TV's own, never shared.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li><strong>Recent channels wait before adding a channel</strong> — Delay Before Adding to Recent is now honoured: a channel only joins Recents once it has stayed on that long, so zapping past channels no longer fills the strip.</li>
+</ul>
+<h2>0.12.10</h2>
+<h3>Fixed</h3>
+<ul>
+<li><strong>The TV Guide keeps its history</strong> — each guide update threw away the programmes the provider had dropped from its guide, so you could only go back a day or two (less on some channels), whatever Past Days to Keep EPG was set to. Programmes already shown are now kept for as many days as that setting says. The guide fills back up as the days go by: what was thrown away before can't come back.</li>
+</ul>
+<h2>0.12.9</h2>
+<h3>Fixed</h3>
+<ul>
+<li><strong>Decoder on Auto stays on the hardware decoder</strong> — on some boxes (an onn 4K Plus) a passing hiccup in the hardware decoder, or in the sound's, moved the whole channel onto the slower software decoder until you changed channel, and the picture lagged. The hardware decoder now gets another go first, only the part that failed changes over, and a hardware decoder that won't start is tried again a moment later.</li>
+<li><strong>Report a Problem shows decoder errors</strong> — a decoder that fails or won't start is now listed with what went wrong, and the decoder in use says whether it's hardware or software.</li>
+</ul>
+<h2>0.12.8</h2>
+<h3>Improved</h3>
+<ul>
+<li><strong>Catch-up carries on where you left it</strong> — go back to a programme you were watching from catch-up, from History, the TV Guide, the channels list or Search, and it picks up where you stopped instead of starting again. History and Search say where it will carry on from. Watch from start and Restart programme still start at the top.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li><strong>Up and Down after changing channel</strong> — with the info bar up after turning a channel on, Up and Down went into the bar (Down opened the action bar). They now do what they're set to — change channel, or show the next channel's info — until you use the bar.</li>
+</ul>
+<h2>0.12.7</h2>
+<h3>Improved</h3>
+<ul>
+<li><strong>The TV Guide scrolls smoothly</strong> — moving through the programmes, the guide glides to each new place instead of jumping there, and a held scroll runs on smoothly and eases to a stop. Back to now from far away slides the last of the way onto it.</li>
+<li><strong>Holding to scroll pauses a little longer after the first step</strong> — 0.8 s, so a hold meant for one programme back stays there.</li>
+</ul>
+<h2>0.12.6</h2>
+<h3>Improved</h3>
+<ul>
+<li><strong>Holding to scroll the TV Guide pauses after the first step</strong> — hold Left (set to Scroll to previous programmes) and it goes back one programme, waits half a second, then carries on scrolling. A hold meant for one step back no longer overshoots.</li>
+</ul>
+<h2>0.12.5</h2>
+<h3>Fixed</h3>
+<ul>
+<li><strong>Left in the TV Guide with the TiviMate preset</strong> — where Left opens the groups, it now does so only from the programme on now. Gone back into the past, or ahead into the future, Left scrolls back through the programmes instead, and opens the groups once you're back on now — as TiviMate does.</li>
+<li><strong>Holding a button set to scroll keeps scrolling</strong> — a Long press set to Scroll to previous (or next) programmes now carries on scrolling for as long as it's held, instead of moving one programme.</li>
+</ul>
+<h2>0.12.4</h2>
+<h3>Fixed</h3>
+<ul>
+<li><strong>TV Guide cells left blank with Two-line programme titles on</strong> — a programme that began well before the left edge of the guide showed no title (and one that began a little before showed only the end of it). The title now starts at the cell's visible edge, as it does with one-line titles.</li>
+</ul>
+<h2>0.12.3</h2>
+<h3>New</h3>
+<ul>
+<li><strong>History</strong> — the programmes you've watched, live or from catch-up, by the day you watched them, laid out like Search's programmes. OK plays one in the window on the right — from catch-up where the channel has it — and OK again on what's playing goes to it full screen. Hold OK to remove one or clear the lot. Open it with the History button on the info bar, or set a button to History (Long Up in the TiviMate preset). Settings › Appearance › Player › History / Recent says how many days it keeps and how long you watch before a programme goes in.</li>
+<li><strong>Programme description over the picture</strong> — Show Program Description (Long Right, in both presets) now opens a panel in the top right with the channel, the programme, its time and how far in it is, its description and what's on next, instead of the info bar. The next button takes it away.</li>
+<li><strong>Every remote button has a Long press</strong> — Remote Control › TV Guide and Player now list a Long version of every button, and the Previous, Next, Subtitles and Audio track buttons some remotes have. The new ones do nothing until you set them. A button whose Long press does nothing acts the moment it's pressed, as before.</li>
+<li><strong>Hold Volume down to mute</strong> — in both presets, on the player and in the TV Guide.</li>
+</ul>
+<h3>Improved</h3>
+<ul>
+<li><strong>Search shows the picture</strong> — opened from live TV, Search has the channel playing in a window on the right, as the channels list in preview mode does. OK on a channel or programme plays it there; OK again goes full screen.</li>
+<li><strong>Search and History in Preview Mode</strong> — Settings › Appearance › Player. On to start; switched off, Search and History lie over the channel instead, dark enough to read but with the channel still showing through behind.</li>
+</ul>
+<h2>0.12.2</h2>
+<h3>New</h3>
+<ul>
+<li><strong>Remote Control › Preset</strong> — Default (Hotdog TV), TiviMate or Custom: every TV Guide and Player button, and the catch-up seeking switches, at once. TiviMate's is TiviMate's own out-of-the-box layout (Up/Down change channel, Left opens the channels list, Back goes back). Change a button and it becomes Custom; pick Default or TiviMate to go straight back, and Custom again to get your changes back.</li>
+</ul>
+<h3>Improved</h3>
+<ul>
+<li><strong>Skip Intro and Next Episode find more titles</strong> — where a provider doesn't send a film's or series' TMDB id, it's now looked up by name, as the synopses already were.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li><strong>The Next Episode popup couldn't be reached</strong> after seeking or pausing near the end: Left and Right moved the seek bar instead of its buttons. They now move between Cancel and Play Next Now, and Left from Cancel goes back to the seek bar.</li>
+</ul>
+<h2>0.12.1</h2>
+<h3>New</h3>
+<ul>
+<li><strong>Time Before Now</strong> — Settings › Appearance › TV Guide: how much of what has already been shown stays in view, left of the current time, when the TV Guide is on what's on now. Back to the Half Hour (the start, as TiviMate does: at 4:50 the guide starts at 4:30), None (now at the edge, as before), or 5 to 30 minutes.</li>
+</ul>
+<h3>Improved</h3>
+<ul>
+<li><strong>The TV Guide stays put while you browse</strong> — going up and down the channels no longer moves the guide's times. It only moves, half an hour at a time, when Left or Right takes you off the screen, and Back brings it back to what's on now.</li>
+<li><strong>Episode names and pictures</strong> — where a provider names a series' episodes only by the show and its number, the real episode names and pictures now come from TMDB, and a film with no description gets TMDB's.</li>
+<li><strong>Film and episode pages</strong> — the buttons are icons, and a watched tick sits in the corner.</li>
+<li><strong>With Turn on Last Channel on App Start off</strong>, the app now opens in the TV Guide on the last channel you watched, in the group you watched it from, with nothing playing (it used to play the first channel). OK plays it.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li><strong>The TV Guide jumped back and forth</strong> while scrolling down the channels.</li>
+<li><strong>The TV Guide's time line stood still</strong> while the guide was open, catching up only when it was closed and opened again. It now moves with the clock.</li>
+<li><strong>A long programme title jumped to the middle</strong> when it was picked in the TV Guide, if the programme began before the left edge. It now scrolls from the start of the title.</li>
+</ul>
+<h2>0.12.0</h2>
+<p>This version changes how the app keeps its data. Once it is installed, an earlier version can't be put back over it without clearing the app's data first.</p>
+<h3>New</h3>
+<ul>
+<li><strong>Downloads</strong> — films, episodes and past programmes from catch-up can be downloaded to watch later: hold OK on one in the TV Guide, or use Download on a film's or episode's page. One downloads at a time, and one that is interrupted carries on from where it got to. They are listed under Recordings › Downloads, and a film or episode keeps your place as it does when streamed. Settings › Recording › Download To chooses where they go: a Downloads folder beside your recordings (the start), the box itself, an SD card, a USB drive or a network share.</li>
+<li><strong>Hide a group, or pick the groups to show</strong> — hold OK (or Menu) on a group in the TV Guide, the channel list, Movies or Shows and choose Hide group. On a playlist's name, Show / Hide Groups lists all its groups with a tick beside each one shown: untick the ones you don't want, then Back.</li>
+<li><strong>Stop Live TV in Movies &amp; Shows</strong> — Settings › General: with it on, the channel stops as Movies or Shows opens, and comes on again when you go back to Live TV. It starts off.</li>
+</ul>
+<h3>Improved</h3>
+<ul>
+<li><strong>Previous programme in catch-up</strong> — watching a past programme, the button before Rewind now goes back to the programme before it, from its start. On live TV it still starts the programme on now from the beginning.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li><strong>The TV Guide opened in the wrong group</strong> after a channel was chosen from Recents: it now opens in the group you last watched that channel from.</li>
+<li><strong>The Recordings icon shifted</strong> as it took the focus in the bar over the picture.</li>
+</ul>
+<h2>0.11.5</h2>
+<h3>Fixed</h3>
+<ul>
+<li><strong>Nine: the picture went black with the sound still playing</strong> — Nine sends its channels in several qualities, some at 50 frames a second and some at 25, and the app moves between them as the connection allows. On some boxes (a Xiaomi TV Box S among them) each move also switched the TV's refresh rate between 50 and 25 Hz, until the picture didn't come back. The app now leaves the TV's refresh rate alone unless Settings › Playback › Auto Frame Rate is on.</li>
+<li><strong>No sound on Nine with Timeshift on</strong> — Nine keeps its sound apart from its picture, and timeshift kept only the picture. Nine's channels now play straight from the stream, with sound, though without pause and rewind for now. Recording one says it can't be recorded yet, rather than making a silent recording.</li>
+</ul>
+<h3>Improved</h3>
+<ul>
+<li><strong>Problem reports</strong> — a report sent from a box that syncs with the same server is filed under its person, so their group's admins can read it there.</li>
+<li><strong>Problem reports say how the box is connected</strong> — a new Network part: Wi-Fi or a network cable, the Wi-Fi band, signal strength and link speed, whether a VPN is in the way, and how quickly the last five minutes of the stream came in. A channel that keeps stopping to load can then be put down to the box's connection or to the provider. No network names or addresses are included.</li>
+</ul>
+<h2>0.11.4</h2>
+<h3>Improved</h3>
+<ul>
+<li><strong>A new logo</strong> — Hotdog TV has a new hotdog: on the home screen's app icon and banner, the start-up screen, the menu down the left, and first-time setup. On Android 13 and later the icon can also take your launcher's themed colours.</li>
+<li><strong>Readable words on the Focus Colour</strong> — with Settings › Appearance › Focus Colour set to Theme Colour, the words on whatever has the focus were always black, and hard to read on the darker colour themes. They are now white or black, whichever stands out on your colour.</li>
+</ul>
+<h2>0.11.3</h2>
+<h3>New</h3>
+<ul>
+<li><strong>Recordings named after the programme</strong> — a recording's file is now called what it is, "Harbour Lights - S01E02 - The Long Way.ts", from the title and episode the TV Guide gives. With no episode details it has the date and time it began, so a daily programme doesn't end up with a pile of numbered copies. Recordings made before keep their old names.</li>
+<li><strong>Where recordings are saved</strong> — Settings › Recording has two new choices. Save Recordings (Record and Custom recording): in the recordings folder, or a folder for each recording. Save Series Recordings: in the recordings folder, a folder for each recording, a folder for the series, or the series' folder and then one for each season, where the guide gives the season. They start as "In the Recordings Folder" and "Series Folder, then Season". Deleting a recording also tidies away a folder it leaves empty.</li>
+<li><strong>The playing channel's icon in the TV Guide</strong> — Settings › Appearance › TV Guide › Playing Channel Icon chooses what marks the channel you are watching: the chevron as before, a play arrow, a dot, sound bars, a speaker, or nothing. Playing Channel Icon Size makes it bigger.</li>
+<li><strong>Recordings from your other boxes</strong> — when two boxes save recordings to the same network share, each now lists the other's in Recordings, on the On the Network Share tab, with what it is, which box recorded it, when and how long — and can play or delete it. Each recording now has a small details file beside it to make this work, so recordings made before this update show only as "Recording" with the date.</li>
+</ul>
+<h3>Improved</h3>
+<ul>
+<li><strong>Recordings, redone</strong> — the screen now has the menu down the left as Movies and Shows do, the recording you are on shown in full at the top (its channel, when, how long, the episode and what it's about), and the sections as tabs: Recording now, Recorded, Scheduled, Series, and On the Network Share. Each recording is one line, grouped under its programme (Scheduled by day), so far more fit on the screen. OK plays a recording; hold OK to delete it. On anything that can't be played, OK brings up what can be done: stop, cancel, new episodes only or every showing, stop the series.</li>
+<li><strong>TV Guide icons follow Font Size</strong> — the playing channel's icon and the catch-up icon now grow and shrink with Settings › Appearance › Font Size, as the channel names and logos always have.</li>
+<li><strong>Back twice leaves a film or episode</strong> — Back while watching still brings up the menu over the picture; Back again now stops it (your place is kept) and takes you back to where you started it: its info page, or the Movies, Shows or Recordings screen.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li><strong>Recordings deleted outside the app stayed in the list</strong> — a recording whose file has been deleted (from a PC looking at the network share, say) now comes off the list when Recordings is opened. Nothing is taken off while the share or drive can't be reached.</li>
+<li><strong>Series recordings that found only one episode</strong> — some providers' guides put the episode's name in the title ("Cheers - I Kid You Not"), and a series set from one of those looked for that one episode and nothing else. A series now takes the show's own title ("Cheers") and records every episode, whatever comes after it. One already set this way is put right the next time the guide loads. Its recordings are named and grouped under the show too: "Cheers/Season 7/Cheers - S07E14 - I Kid You Not.ts".</li>
+<li><strong>Recordings in the Movies and Shows menu did nothing</strong> — choosing it from the menu down the left of those screens now opens Recordings.</li>
+<li><strong>Decoder set to Software: a channel that froze every few seconds, or never started</strong> — on some boxes (a Fire TV Stick 4K among them) Android's own software decoder can't follow an ordinary broadcast channel: it showed a second of streaked, wrongly coloured picture and then nothing, and the app reconnected over and over. When that happens the channel is now reopened on the box's hardware decoder, and plays. Settings › Playback › Decoder is best left on Auto unless a box needs otherwise: Software has no way of smoothing the lines of an SD or 1080i channel, and is slower.</li>
+</ul>
+<h2>0.11.2</h2>
+<h3>New</h3>
+<ul>
+<li><strong>Next programme</strong> — watching a programme from catch-up that has already finished, the button after Fast forward takes you on to the one that followed it, from its start. It is greyed out for the programme that is on now, which has nothing after it yet.</li>
+<li><strong>Catch-up: where live is on the bar</strong> — watching a programme from catch-up that is still on air, the bar is a shade lighter from where you are up to where live has got to, so the end of the bar isn't taken for live. A programme that has finished has a plain bar.</li>
+<li><strong>Catch-up: hold to skip further</strong> — hold Left or Right (or rewind / fast-forward) while watching catch-up and the skip grows the longer you hold: thirty seconds at a time, then a minute, two, five. The bar shows where you have got to and the picture goes there when you let go. Held, it stops at the start or the end of the programme, and short of live in one that is still on; a press of its own goes on from there.</li>
+<li><strong>Catch-up: skipping back past the start of a programme</strong> takes you that far back into the one before — thirty seconds before the hour, not an hour before it. Where the programme followed on from the last without a pause (see above) the picture goes straight back, with nothing asked of your provider.</li>
+</ul>
+<h3>Improved</h3>
+<ul>
+<li><strong>Playback buttons</strong> — Watch from start has moved in beside Rewind, with Next programme after Fast forward, and these five no longer show a name underneath: the icons say what they are. Live, Reload and Record, at the right, still show theirs when you are on them. The same goes for films and episodes, where Previous and Next episode sit either side of the skip buttons.</li>
+<li><strong>Info bar: no more "behind live"</strong> — the words saying how far behind live you are have gone, from under the bar while you seek and from beside the buttons: the dot on the bar shows it. The time beside the buttons now counts to where the picture is, not to the clock, when you have paused or rewound.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li><strong>Catch-up closing the app while skipping</strong> — skipping through an MPEG-TS catch-up programme could fill the app's memory until Android closed it. The player now holds only half a minute of a programme that is already on storage, and never loads past what memory can spare.</li>
+<li><strong>Catch-up: long waits at the start and after a jump</strong> — each start, and each jump beyond what had been read ahead, asked your provider three times over before a picture came, and some providers answer the last of those at a crawl for half a minute before hanging up. It now asks once, and a stream that comes at a crawl is asked for again after a few seconds.</li>
+<li><strong>Rewinding from live into catch-up: the position jumped to the start</strong> — while the catch-up stream loaded, the bar showed the beginning of the programme and then went back to where you had rewound to. It now shows where it is going from the moment you press.</li>
+<li><strong>Catch-up used two connections</strong> — the live channel went on being recorded for pause and rewind all the time a catch-up programme was playing, so your account held two streams at once. Live now stops as catch-up starts and comes back, with pause and rewind, when you return to it. A provider that allows one connection could refuse or slow the second.</li>
+<li><strong>Live TV after catch-up: no pause or rewind</strong> — going back to live straight after catch-up, a provider that was still counting the catch-up connection refused the live one, and the channel then played without timeshift. It is now asked once more a moment later.</li>
+</ul>
+<h2>0.11.1</h2>
+<h3>New</h3>
+<ul>
+<li><strong>A new look throughout</strong> — one typeface across the app, calmer greys, and one way of showing where you are: whatever is selected — a programme in the TV Guide, a channel in the list, a button, a setting — is now a white block with dark text. Your colour theme still colours what is happening: the line for now, how far through a programme is, the channel that is playing, a switch that is on.</li>
+<li><strong>TV Guide</strong> — the picture sits in a rounded window at the top with the programme beside it, the clock is in the top right corner, and above the channels the guide says which group you are in and which day you are looking at. The line for now carries the time.</li>
+<li><strong>Info bar</strong> — the clock and the date are in the top right of the screen. The programme's start and end times are at either end of its bar, with what's next and how long is left underneath. A dot on the bar marks where the picture is in the programme — at now when you are watching live, further back when you have paused or rewound — so the bar no longer needs a label to say you are behind. A channel with catch-up shows the catch-up icon beside its name, and the icon sits in a circle of your theme colour while a catch-up programme is what you are watching.</li>
+<li><strong>Catch-up reads ahead onto storage</strong> — a catch-up programme sent as MPEG-TS is now read ahead onto internal storage as films already are, where your provider allows it: one that serves the programme as a file, or one that sends it faster than it plays. Skipping forward or back inside what has been read is instant and lands exactly where you asked. A skip beyond it goes back to your provider and lands on the closest whole minute, which is as close as a provider can start a programme; the position shown is that minute. It still uses one connection to your provider. A provider that sends catch-up only as fast as it is watched, and not as a file, leaves nothing to read ahead, and plays as it did before. Settings › Playback › Buffer Movies and Catch-up on Storage turns it off. This is new and still being worked on: how well it goes depends on how your provider serves catch-up.</li>
+<li><strong>Watch from start in the TV Guide's menu</strong> — hold OK on a programme that is on now, on a channel with catch-up, and Watch from start is at the top of the menu. Where catch-up is read ahead (see above), the picture carries on past the point the programme had got to when you started, instead of jumping to live there.</li>
+<li><strong>Catch-up carries on into the next programme</strong> — when a programme watched from catch-up ends, the one after it follows from catch-up too, even if it is the one on air now, and with an MPEG-TS provider it follows without a pause: the same stream runs on, and only the programme named on screen changes. It used to jump to live, skipping whatever of that programme had already gone out. You are back at live once catch-up has nothing more to give.</li>
+<li><strong>Playback buttons</strong> — Rewind, Play / Pause, Fast forward, Watch from start, Reload and Record are round icon buttons, and the one you are on shows its name underneath. While you seek, the time you have moved to is shown above the dot.</li>
+<li><strong>Menu</strong> — its icons are grouped: places to go, this channel, picture and sound, and Settings.</li>
+<li><strong>Movies, Shows, Search, Recordings and Settings</strong> — the same look: the side bar, the lists, the buttons and the prompts.</li>
+<li><strong>Focus Colour</strong> — Settings › Appearance › Focus Colour: keep the white, or take it from your colour theme — Theme Colour, or Light Theme Colour for a paler version with dark text.</li>
+<li><strong>Settings from the TV Guide's menu</strong> — hold OK on a programme and Settings is at the bottom of the menu.</li>
+</ul>
+<h3>Improved</h3>
+<ul>
+<li><strong>Show Current Time Indicator at Full Height</strong> (Settings › Appearance › TV Guide) now does what it says: on, the line for now runs down the guide; off, only the time on the ruler shows. It is on to begin with.</li>
+<li><strong>Settings slides in</strong> from the right when it opens, and back out when it closes.</li>
+<li><strong>Report a Problem says more about a crash</strong> — a report made after the app closed by itself now includes the log from before it closed, any crash the box still has on record, and (Android 11 and later) the reason Android gives for the app stopping. It used to hold only what happened after the app was opened again.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li><strong>The app closing by itself after 20 to 30 minutes of watching</strong> — on boxes that go to their screensaver or to sleep when the remote hasn't been pressed for a while (a Fire TV, a Chromecast with Google TV), a channel or film left playing was taken off the screen when that time was up: the app never told the box it was showing something. It does now, for as long as something is playing. Paused or stopped, the box sleeps as it would under any other app. If you turned sleep or the screensaver off on your box to get round this, you can turn it back on.</li>
+<li><strong>Catch-up: the position after a skip</strong> — a skip that had to go back to your provider showed the time you asked for, while the picture started at the top of that minute — up to a minute earlier. It now shows where the picture is: the whole minute nearest to where your presses add up. A skip shorter than a minute still moves, to the next minute that way.</li>
+<li><strong>Leaving the TV Guide was slow and jerky with a big channel list</strong> — the picture growing back to full screen could take a second or two and stop and start on the way. Each time the app saved something as you left the guide (the channel you chose, the group it was in), the guide worked through its whole channel list again, several times over. It now does that only when the list has changed. The same goes for anything else that saves a setting while the guide is open.</li>
+<li><strong>TV Guide: the time on the line for now</strong> no longer sits on top of the ruler's own time when the two are close.</li>
+<li><strong>Channels list: closing a programme's description</strong> — pressing Right on a programme shows its description, and Back then brought a menu up in the corner of the screen. Back now returns to the list.</li>
+</ul>
+<h2>0.10.3</h2>
+<p>This version changes how the app keeps its data. Once it is installed, an earlier version can't be put back over it without clearing the app's data first.</p>
+<h3>New</h3>
+<ul>
+<li><strong>Radio</strong> — where a playlist has radio stations, the icon bar beside the groups (in the TV Guide and the channels list) now has <strong>Radio</strong> under Live TV. Choose it and the guide and the list show the stations and their groups, and nothing else; choose Live TV to go back to the channels. The TV Guide opens on whichever kind you are listening to or watching. A station is one a playlist marks as radio (`radio="true"` in an M3U playlist, a radio stream from an Xtream provider); they are told apart the next time each playlist updates, which happens by itself when the app starts.</li>
+<li><strong>Song lyrics on radio stations</strong> — where a station says which song it is playing, the song's words come up down the right-hand third of the screen and move up as the song goes, with the visualisation to the left of them. They stay there with the info bar or the menu up. Where the words come with timings and you heard the song start, the line being sung is lit and the words step on line by line — as close to the singing as the station is in saying when a song begins. Words without timings, or a song you tuned into part-way through, scroll steadily instead. A song whose words can't be found shows its name for a few seconds instead, and a station that doesn't name its songs shows nothing. The words are looked up at lrclib.net, a free lyrics database, by the song's artist and title. Settings › Playback › Radio Visualisations › Song Lyrics turns it off.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li><strong>TV Guide: a channel whose guide stops part-way</strong> — where a channel's programme information ran out before now (or didn't start until later), the rest of its row was blank, and with that channel on, Back did nothing — the groups couldn't be reached without changing channel first. The part with nothing listed now shows the channel's name or "No Information", whichever Settings › Appearance › TV Guide › When No Programme Information says, and Back opens the groups as it does everywhere else.</li>
+</ul>
+<h2>0.10.2</h2>
+<h3>New</h3>
+<ul>
+<li><strong>A new channels list, with or without a preview</strong> — the channels list (Long Left by default) now shows each channel with its number, what's on and how far through it is, and beside it the programmes of the channel you're on: earlier ones, the one on now, and what's coming, day by day. Left opens the groups. Right moves into the programmes, where OK watches an earlier one from catch-up or opens the menu on a later one (Remind, Record), and Right shows its description. Holding OK opens the same menu the TV Guide has. There is also a <strong>preview mode</strong>: the picture shrinks into a window beside the list, with the clock above it and the programme's details below. Give it a button in Settings › Remote Control › Player — "Show channels list in preview mode" or "Show channels list groups in preview mode".</li>
+<li><strong>Channels list settings that now do something</strong> — Settings › Appearance › Player › Channels List: Highlight Current Programs in Colour, Dim Past Programmes, Stay on List when Switching Channels, and for the list over the full-screen picture, Show Programmes and Show Programme Description.</li>
+<li><strong>Report a Problem</strong> — Settings › Other. If something plays badly on your device — a jerky picture, no sound, a channel that won't start — this puts together what the developer needs to look into it: what the device is, which decoders it has, how the channel on now is being played, and what the app logged lately. Playlist addresses and logins are left out. Make it while the problem is on screen, then pass it on one of three ways: <strong>Send to the Developer</strong> (you get a short code to quote), <strong>Show on Your Phone</strong> (scan a code and read, copy or save it there), or <strong>Save as a File</strong> (to a USB drive, a network share or the device's Downloads).</li>
+<li><strong>Asked before something is deleted</strong> — deleting a recording, cancelling one that is set to record, stopping a series recording and removing a reminder (Settings › Reminders) now ask first. The answer the prompt starts on is "Keep It", so a second press of OK changes nothing.</li>
+</ul>
+<h3>Improved</h3>
+<ul>
+<li><strong>Hold Up or Down to look through channels</strong> — with Up and Down set to show the info panel for the previous or next channel (as they are to begin with), holding one from the full-screen picture now starts stepping through channels straight away. It used to do nothing unless you pressed once first. If you have given Long Up or Long Down something of its own to do, holding still does that.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li><strong>Decoder set to Software or Hardware could leave a channel black or silent</strong> — on devices that describe their decoders wrongly (an NVIDIA Shield calls all of them hardware), choosing Software in Settings › Playback › Decoder left channels with no picture and no sound. And on devices whose only decoder for a kind of sound is a software one, Hardware could leave that sound out. Each setting now uses the kind you chose where the device has one, and whatever it has where it doesn't.</li>
+</ul>
+<h2>0.10.1</h2>
+<p>This version changes how the app keeps its data. Once it is installed, an earlier version can't be put back over it without clearing the app's data first.</p>
+<h3>New</h3>
+<ul>
+<li><strong>Previous and Next episode</strong> — while an episode plays, the bar has Previous and Next buttons either side of rewind and fast forward. They play the episode before or after, carrying on across seasons, from where you left it if you had part-watched it. At a series' first episode Previous is greyed out, and at its last Next is. The bar stays up, so you can press again to keep going. A remote's own Next / Previous buttons do the same.</li>
+<li><strong>Recordings are marked</strong> — in the TV Guide, a red dot on a programme that is being recorded and a red ring on one set to record; on the info bar, a red dot after the programme's title while that channel is being recorded, including on the bar that previews other channels.</li>
+<li><strong>Recordings know which episode they are</strong> — Recordings now names each one the way the TV Guide does, with its season and episode, and shows the episode's name and description underneath. Playing one shows them on the bar too. A recording started with the Record button is named after the programme that was on, instead of "Manual recording". (Recordings made before this update show what their title and description say.)</li>
+<li><strong>A shorter menu in the TV Guide</strong> — holding OK on a programme had grown to a dozen lines. Record, Favourites and Hide now each open a small menu of their own: OK or Right opens it, Left or Back comes back out.</li>
+</ul>
+<h3>Improved</h3>
+<ul>
+<li><strong>The TV Guide fills in as you scroll</strong> — rows now show their programmes as they come into view, including when you hold Up or Down to race through the list, instead of appearing some time after you stop. The rows just off screen are made ready ahead of you.</li>
+<li><strong>What's on, straight away</strong> — the info bar now shows the programme as soon as a channel comes on, including when the app opens. It no longer says "No Information" first and corrects itself a moment later.</li>
+<li><strong>Films stop short of filling the box's storage</strong> — the part of a film kept on storage for smooth skipping now leaves enough free that Android doesn't warn that storage is running out. How much is kept follows the box: all of it where there is room, less where there is little, and none where there isn't any. It also gives room back if something else needs it while the film plays.</li>
+<li><strong>A gentler start to films</strong> — the first part of a film is still fetched as fast as it will come, so it starts and skips at once; the rest of what's kept ahead now fills steadily over the next minute or two instead of all at once, which on smaller boxes could leave the remote slow to answer while a film got going.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li><strong>Recordings set from the TV Guide now record</strong> — a programme set to record from the guide (hold OK › Record, or Schedule recording) never started, and nothing said so; recordings started with the Record button, and series recordings, were not affected. They now record, including any you had already set.</li>
+<li><strong>Recordings show their length and can be skipped through</strong> — a recording played, but the bar showed only how far in you were, and rewind and fast forward did nothing. It now shows how long the recording is and skips like a film.</li>
+<li><strong>A playlist update that fails keeps what you had</strong> — if the provider was down, or answered with an error, when a playlist was updated (at app start, say), the app took that for an empty playlist and removed its channels, films and series until the next update that worked. They are now left as they were, and the update is reported as failed.</li>
+</ul>
+<h2>0.9.19</h2>
+<h3>Fixed</h3>
+<ul>
+<li><strong>Recent Channel Count</strong> — Settings › Appearance › Player › History / Recent Channels › Recent Channel Count did nothing: the info bar's strip and the Recent list showed up to 20 channels whatever it was set to. They now show the number you choose, and a change shows straight away. Up to 50 are remembered behind the ones on show, so when you remove a channel from Recents the next one back takes its place at the end.</li>
+<li><strong>Holding OK on a channel in the side menu's Recent list</strong> closed the app instead of opening the channel's menu (Play, Remove from Recents, Clear All Recents). The menu now opens there, as it does on the info bar's strip.</li>
+</ul>
+<h2>0.9.18</h2>
+<h3>New</h3>
+<ul>
+<li><strong>Record new episodes</strong> — a series recording can now be kept to new episodes, leaving out the repeats. Hold OK on a programme in the TV Guide and choose Record new episodes (or Record every showing, as before). It goes by what your TV guide says: some guides mark new episodes — with a small ᴺᵉʷ after the title, "New:" in front of it, or marks of their own that you don't see — and many don't. Where the guide doesn't say, choosing Record new episodes tells you so and offers to record every showing instead. In Recordings each series shows which it is, and can be switched between New only and Every showing.</li>
+<li><strong>Season and episode in the TV Guide</strong> — a programme's season and episode numbers now show after its title ("Chicago Fire S15 E1"), and the episode's name on a line of its own above the description — in the TV Guide, the info bar and search. They come from wherever your guide gives them: many guides carry them as details of their own, which the app used to pass over, and others write them into the description or the title, which the app now reads and tidies so nothing is said twice. The first guide update after installing reads each guide in full once to pick them up, so it takes longer than usual.</li>
+<li><strong>Choose how episodes are shown</strong> — Settings › Appearance › TV Guide › Episode Details has ready-made layouts for the title (S4 E6, S04E06, 4x06, in brackets, in front of the title, with the episode's name, or the title alone) and for the description, with a preview beside the menu that changes as you move through them. You can also type a layout of your own, and watch the preview follow as you type. Your choice is shared with your other devices when Sync is on.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li><strong>A series chosen from a showing marked ᴺᵉʷ</strong> recorded only the showings marked that way, and one chosen from a repeat recorded only the repeats — the mark was being taken as part of the programme's name. A series now covers every showing unless you choose new episodes only. Series you already have keep doing what they were doing.</li>
+</ul>
+<h2>0.9.17</h2>
+<h3>New</h3>
+<ul>
+<li><strong>Turn on next channel / Turn on previous channel</strong> — two new actions for any remote button, in Settings › Remote Control › Player. They switch straight to the channel above or below the one you're watching, without showing it first and waiting for OK. Set them on Pg+ (Ch+) and Pg- (Ch-) to flick through channels with the channel buttons; press again to carry on to the next one.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li><strong>Pg+ and Pg- on remotes and keyboards that send Page Up / Page Down</strong> did nothing while watching; they now do what Pg+ (Ch+) and Pg- (Ch-) are set to.</li>
+</ul>
+<h2>0.9.16</h2>
+<h3>New</h3>
+<ul>
+<li><strong>Record a series</strong> — hold OK on a programme in the TV Guide and choose Record series: every showing of it on that channel is recorded, as the guide comes to list them. If the guide moves a showing, its recording moves with it. Recordings lists your series at the top, each with Stop series. (Repeats aren't told from first showings: every showing is recorded.)</li>
+<li><strong>Backup &amp; Restore</strong> — Settings › Backup &amp; Restore keeps a copy of your playlists and their logins, guide sources, favourites, hidden channels, settings, reminders, recordings waiting to be made and watch history. It can go on the box's own storage, an SD card, a USB drive, a network share or — with Sync set up — your sync server, and be restored from any of them. Channels and the guide aren't in it; they're fetched again after a restore.</li>
+<li><strong>Reminders on the action bar</strong> — Reminders opens the panel on your upcoming reminders. Select one to go to its channel now, record the programme instead, or remove it.</li>
+</ul>
+<h3>Improved</h3>
+<ul>
+<li><strong>Recordings carry on when the stream stops</strong> — if the provider drops the stream, refuses it for a while, or it just stops arriving, the recording now asks for it again and carries on in the same file, instead of ending (or hanging) there. Recordings shows when that has happened.</li>
+<li><strong>A recording picks up again if the app was closed under it</strong> — by the system, a crash or a restart of the box — as long as its programme is still on.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li><strong>Scheduled recordings with Hotdog TV closed or the box asleep</strong> — the recording could start and then be cut off, because nothing was keeping the app alive or the box's processor awake. It now records through to the end with the screen off, without waking the TV.</li>
+<li><strong>Recordings of encrypted channels</strong> could come out damaged, with a few stray bytes after every few seconds.</li>
+<li><strong>Cancel on an upcoming recording</strong> left its alarm set.</li>
+<li><strong>A TV Guide address that is passed on to a site's http:// side</strong> — some guide addresses (a proxy or short link in front of the real one) redirect to the plain http:// address of a site that only works over https://. A web browser quietly uses https:// for such a site, so the address looks fine there, but the guide failed to load here with the server's error. When that happens the guide is now fetched from the same address over https:// instead.</li>
+<li><strong>Sync with a server address entered as http://</strong> (or with no http:// at all) — when the server passes such an address on to https://, the TV said "Synced ✓" and received changes from your other devices, but nothing changed on the TV itself — favourites, where you left off, hidden channels, playlists, settings — ever reached your account. It does now, and whatever the TV had failed to send goes up once after this update.</li>
+<li><strong>A Sync Server URL typed in Settings without http://</strong> left sync switched off without saying why. It is now taken as an http:// address, as it is during setup.</li>
+<li><strong>Timeshift and recordings on channels whose address redirects</strong> — for an HLS channel that is passed on to another address (often from http:// to https://), the pieces of the stream were looked for at the first address instead of the one it was passed on to. Such a channel took several seconds longer to start, could not be paused or rewound, and a recording of it came out empty.</li>
+</ul>
+<h2>0.9.15</h2>
+<h3>Improved</h3>
+<ul>
+<li><strong>A big TV Guide update finishes much sooner</strong> — reading the guide already stored, and clearing out programmes that have gone from it, were slow on a large provider guide (a quarter of an hour on a Shield). Both are now done in the order the guide is kept in.</li>
+</ul>
+<h2>0.9.14</h2>
+<h3>Fixed</h3>
+<ul>
+<li><strong>TV Guide update failing with "unexpected end of stream"</strong> — in 0.9.13 a large guide from some providers stopped part-way through every time it was updated, so the guide slowly ran out. The download is now taken as fast as it comes and read afterwards, so the provider's server no longer gives up on it.</li>
+</ul>
+<h2>0.9.13</h2>
+<h3>New</h3>
+<ul>
+<li><strong>A toolbar on Movies and Shows</strong> — top right of each: a search of just movies or just shows (select the magnifying glass and type), Sort By (the provider's order, A to Z, Z to A, or newest first), and Rows, which sets the order of the rows on the page — Continue Watching, Next Up, New, Favourites, Recently Added — and hides the ones you don't want. Up from the top row reaches it.</li>
+</ul>
+<h3>Improved</h3>
+<ul>
+<li><strong>The TV Guide updates much faster</strong> — an update now writes only the programmes that changed instead of the whole guide, and reads the file several times quicker. A large guide that took minutes takes seconds after the first load.</li>
+<li><strong>Guides nobody uses aren't downloaded</strong> — a guide source that no playlist's channels use is skipped, and nothing of it is kept. Settings says "Not used by any playlist" beside it.</li>
+<li><strong>Next Up notices new episodes by itself</strong> — when a series you're up to date with gets a new episode or season, it appears in Next Up after the playlist updates; you no longer have to open the series first.</li>
+<li><strong>Signing in to sync on a TV that's already set up</strong> — a playlist or guide the TV already has is matched with the one in your account instead of being added a second time. Its favourites, hidden channels, reminders and where you left off stay with it.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li><strong>Next Up opened the wrong episode</strong> — choosing "Next: S4 E1" opened the series on the last episode watched (S3 E22). It now opens on the episode it names, across seasons too.</li>
+<li><strong>Multiview with Dolby or DTS sound</strong> — the sound stayed on one screen whichever was selected. It now follows the selected screen. (While Multiview is open such sound is decoded by Hotdog TV rather than passed to the TV or receiver; it goes back as it was when Multiview closes.)</li>
+<li><strong>The ring round the selected Multiview screen</strong> no longer stays over the picture; it comes up when you move and fades with the labels.</li>
+</ul>
+<h2>0.9.12</h2>
+<h3>New</h3>
+<ul>
+<li><strong>Holiday visualisations</strong> — six for radio stations: Jack-o'-Lantern and Witching Hour for Halloween, Fairy Lights and Spectrum Tree for Christmas, Southern Cross and Harbour Fireworks for Australia Day. They're in the list (hold Right on a radio station) under Holidays all year round.</li>
+<li><strong>Holiday Takeover</strong> — from 24 October to 1 November, 1 December to 6 January and 19 to 27 January, radio stations show that holiday's visualisations, and changing them every few minutes keeps to those. Settings › Playback › Radio Visualisations › Holiday Takeover turns it off.</li>
+<li><strong>Hide All Channels for one playlist</strong> — Settings › Playlists › the playlist › Show All Channels Category.</li>
+</ul>
+<h3>Improved</h3>
+<ul>
+<li><strong>Visualisations follow the beat</strong> — every visualisation now picks out the kick drum properly, so sparks, flashes and the rest happen on the beat, and talk radio no longer sets them off.</li>
+<li><strong>Holding Up or Down in the TV Guide speeds up</strong> — after 2 seconds it moves 3 rows at a time, after 4 seconds a page at a time, for channels and groups alike. A held button stops at the top or bottom; a single press still goes round.</li>
+<li><strong>The channel strip under the info bar</strong> stays still until the highlight reaches the middle, then keeps it there — as the menu bar does.</li>
+<li><strong>Decoder: Auto</strong> — when a channel's decoder fails, Hotdog TV tries it again on the other kind (software instead of hardware, or the other way round) before giving up.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li><strong>Show All Channels Category</strong> switched off now hides All Channels under every playlist as well as under All Playlists. A playlist with no groups keeps it.</li>
+</ul>
+<h2>0.9.11</h2>
+<h3>New</h3>
+<ul>
+<li><strong>Autoplay Next Episode</strong> — at an episode's credits a popup at the bottom right counts down to the next one, with Play Next Now and Cancel. Where the credits haven't been timed it comes up for the last 30 seconds and the next episode starts when this one ends. Cancel lets the credits run. Playback › Autoplay Next Episode turns it off. For series from an Xtream Codes playlist.</li>
+<li><strong>Skip Intro</strong> — a Skip Intro (or Skip Recap) button appears during the opening titles of movies and episodes whose timings are known: OK skips to the end of it, Back puts the button away. Playback › Skip Intro Button turns it off.</li>
+</ul>
+<h3>Improved</h3>
+<ul>
+<li><strong>Back while watching a movie or episode opens the menu</strong> — Search, Live TV, Movies, Shows, Recordings, Settings and Exit down the left side, while it carries on playing. It opens on the section you came from: OK there stops it and goes back to its page. Back or Right closes the menu. This replaces "Press Back again to stop".</li>
+</ul>
+<p>Intro and credits timings come from TheIntroDB (theintrodb.org), a community database. Not every show is in it, and a provider's copy that is cut differently can be a few seconds out.</p>
+<h2>0.9.10</h2>
+<h3>New</h3>
+<ul>
+<li><strong>Radio visualisations</strong> — a station with sound and no picture now shows a visualisation that moves with the music instead of a black screen: Nova, Tunnel, Aurora, Kaleidoscope or Starfield. Settings › Playback › Radio Visualisations sets the one to start on, and whether it stays, moves on to the next in order or changes at random every few minutes. Off keeps the black screen.</li>
+<li><strong>Choose one while you listen</strong> — hold Right on a radio station, or Menu › Visuals, for the list. Each one shows behind the list as you move through it; OK keeps it, Back goes back to the one before.</li>
+<li><strong>About Hotdog TV</strong> — Settings › General: the version, and the open-source software Hotdog TV is built with and its licences.</li>
+</ul>
+<h3>Improved</h3>
+<ul>
+<li>A radio station with Dolby or DTS sound is decoded by Hotdog TV while a visualisation is on, so the picture has the music to follow. With visualisations Off it goes to the TV or receiver as it is, as before. Channels with a picture are not affected.</li>
+</ul>
+<h2>0.9.9</h2>
+<h3>Fixed</h3>
+<ul>
+<li><strong>No sound on Dolby and DTS streams</strong> — on a device that can't decode them, connected to a TV that doesn't take them either, the picture played silently with no audio tracks to choose from. Hotdog TV now decodes Dolby Digital, Dolby Digital Plus, DTS and Dolby TrueHD itself when nothing else can. Where the TV or a receiver already takes them, nothing changes: they are still passed through as they are.</li>
+</ul>
+<h3>Improved</h3>
+<ul>
+<li><strong>Stream Info shows how the sound is handled</strong> — passed through to the TV, or which decoder is doing it.</li>
+</ul>
+<p>Dolby and DTS are decoded with FFmpeg 6.0 (ffmpeg.org), used under the LGPL version 2.1 or later.</p>
+<h2>0.9.8</h2>
+<h3>New</h3>
+<ul>
+<li><strong>Reminders</strong> — hold OK on an upcoming programme in the TV Guide and choose Remind. A bar comes up before it starts with Watch, Remind in 5 min, Record and Dismiss. Settings › Reminders sets how long before, how long the bar waits and what it does if left alone, and lists your reminders.</li>
+<li><strong>Reminders while Hotdog TV is closed</strong> — the bar appears over whatever you're watching, and can wake the box from sleep. Android 10 and newer need "Display over other apps" allowed for Hotdog TV: Settings › Reminders takes you there.</li>
+<li><strong>Movies and episodes buffer onto storage</strong> — several minutes are read ahead onto internal storage, so skipping forward is instant and a slow moment at your provider doesn't stop the film. Playback › Buffer Movies on Storage turns it off.</li>
+<li><strong>Remove from History</strong> — hold OK on a movie or episode in Continue Watching. Next Up has Play, Play in External Player and Remove from Next Up.</li>
+<li><strong>Play in External Player for episodes</strong> — in an episode's hold-OK menu.</li>
+<li><strong>Favourites from Search</strong> — hold OK on a channel, movie or show in the results.</li>
+<li><strong>Timeshift never fills the drive</strong> — Timeshift › Fill Storage Up To: past that, the oldest footage is overwritten.</li>
+</ul>
+<h3>Improved</h3>
+<ul>
+<li><strong>Back while watching a movie or episode asks first</strong> — "Press Back again to stop", so one stray press doesn't end the film.</li>
+<li><strong>Record explains itself</strong> — with recording switched off it says so and opens Settings › Recording, and it tells you when a recording is going to internal storage and how much room is left.</li>
+<li>A watched season has a tick on its tab.</li>
+<li>The Favourite button keeps its name; the heart fills in to show it's on.</li>
+<li>A movie or episode that hits a network error carries on from where it was, not from the beginning.</li>
+<li><strong>Updates are noticed sooner</strong> — Hotdog TV checks when you open it, not only twice a day, and an update you looked at in Settings but didn't install is offered again the next time you open the app.</li>
+</ul>
+<h2>0.9.7</h2>
+<h3>New</h3>
+<ul>
+<li><strong>Beta versions</strong> — Settings › General › Check for Beta Version looks for an early build to try out. Betas are never offered automatically, and nothing installs without asking.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li><strong>The app not opening on Android 7 devices</strong>, such as the first Fire TV Stick 4K.</li>
+</ul>
+<h2>0.9.6</h2>
+<h3>Fixed</h3>
+<ul>
+<li><strong>Channels whose address has no extension</strong> (such as `…/12345` rather than `…/12345.ts`) failing with "Input does not start with the #EXTM3U header". They play, and timeshift works on them too.</li>
+<li><strong>Compressed TV guides</strong> failing with "Unexpected token" when their address doesn't end in .gz — for example one with a token or a redirect. Zipped guides load too.</li>
+</ul>
+<h2>0.9.5</h2>
+<h3>New</h3>
+<ul>
+<li><strong>Recent channels menu</strong> — hold OK on a recent channel, in the info bar or the sidebar's Recent list: Play, Add to Multiview (info bar), Remove from Recents, or Clear All Recents.</li>
+<li><strong>Mark a whole season as watched</strong> — a button on the series page for the season you're viewing, or hold OK on any season tab to mark it watched or unwatched.</li>
+</ul>
+<h3>Improved</h3>
+<ul>
+<li>When a playlist's contents change, saving the update no longer slows the rest of the app down.</li>
+<li>Marking a series or season watched updates in one go and syncs to your other devices straight away.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Text fields in Settings (such as a playlist's name or address) closing the moment they opened.</li>
+</ul>
+<h2>0.9.4</h2>
+<h3>New</h3>
+<ul>
+<li><strong>Stream Info</strong> — Menu › Stream Info shows what's playing and how well: resolution, frame rate, codec, bitrate, audio, buffer, connection speed and dropped frames. Back closes it.</li>
+<li><strong>Reload button</strong> — next to LIVE in the playback controls. Reopens the stream when a channel freezes or loses its sound (LIVE only jumps to the live point).</li>
+<li><strong>Double Press Back to Exit</strong> — Settings › General. Two quick presses of Back ask "Exit Hotdog TV?". While it's on, holding Back does the same as a short press.</li>
+<li><strong>Timeshift by storage size</strong> — Settings › Timeshift › Limit Buffer By › Storage Used, from 256 MB to 8 GB, instead of by time. Never uses more than 80% of the free space.</li>
+<li><strong>One-step network storage setup</strong> — SMB Connection Settings › Browse Network: pick the server, sign in if it asks, pick the share, then the folder. Saved and tested in one go.</li>
+<li><strong>Update prompt</strong> — shows a QR code for this page instead of a long list.</li>
+</ul>
+<h3>Improved</h3>
+<ul>
+<li><strong>Movies and episodes buffer further ahead</strong>, so skipping forward and back no longer has to wait for the stream (going back replays from storage). The buffer stays within what the device's memory allows.</li>
+<li><strong>Series and Movies open quickly after the app starts.</strong> Updating playlists no longer holds everything else up, and a playlist that hasn't changed isn't rewritten at all.</li>
+<li><strong>The TV Guide stays open when you choose a channel</strong> — it plays in the preview. Change it in Settings › Appearance › TV Guide › Preview.</li>
+<li><strong>Playlists' own TV guides are picked up.</strong> A playlist that names its guide (x-tvg-url) has it added and downloaded, including playlists set up from the sync portal.</li>
+<li><strong>Home stops playback.</strong> Leaving the app with Home no longer keeps the channel playing in the background. It carries on when you come back.</li>
+<li>Audio languages show their full name (English, not EN).</li>
+<li>A TV guide that fails to download now says why.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li><strong>Channels stuck loading forever with no error</strong> after exiting and reopening the app.</li>
+<li>The TV Guide opening on the previous channel after using Recent Channels.</li>
+<li>Holding Back to exit could open Android's settings menu.</li>
+<li>A freeze while watching some episodes.</li>
+<li>The picture could stop after changing Buffer Size or Decoder while watching.</li>
+</ul>
+</main>
+</body>
+</html>

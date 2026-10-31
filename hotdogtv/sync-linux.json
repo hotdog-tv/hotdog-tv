@@ -1,0 +1,25 @@
+{
+  "version": "0.5.10",
+  "url": "HotdogTV-Sync-0.5.10-linux-amd64.tar.gz",
+  "sha256": "f3ad4bb7c23e8d88327b3928d791ec31d690af7089823204a661ac4254048f29",
+  "size": 5704681,
+  "notes": "Portal: open a series to see its seasons and episodes, with how far you have watched each.",
+  "released": "2026-10-31T09:29:22.932Z",
+  "files": {
+    "amd64": {
+      "url": "HotdogTV-Sync-0.5.10-linux-amd64.tar.gz",
+      "sha256": "f3ad4bb7c23e8d88327b3928d791ec31d690af7089823204a661ac4254048f29",
+      "size": 5704681
+    },
+    "arm64": {
+      "url": "HotdogTV-Sync-0.5.10-linux-arm64.tar.gz",
+      "sha256": "1b1e331266b34d6dcf982c5b38eddeeff85c3091ea33d2650d7428d6f0adb1cc",
+      "size": 5269293
+    },
+    "armv7": {
+      "url": "HotdogTV-Sync-0.5.10-linux-armv7.tar.gz",
+      "sha256": "1a96c17ac6878446af41a20bbc2dc8538ca6f774085cf1e28df157e50fdf9837",
+      "size": 5426292
+    }
+  }
+}
