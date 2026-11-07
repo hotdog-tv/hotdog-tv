@@ -1,0 +1,8 @@
+{
+  "version": "0.5.13",
+  "url": "HotdogTV-Sync-Setup-0.5.13.exe",
+  "sha256": "6062a19b28d95a0316a91688c895dbeffebf9a3397a5890a1dc1ec0606c1b347",
+  "size": 10458772,
+  "notes": "New accounts: the owner can let people make their own account from a TV or the portal, with or without approval (alerts by email, on the Dashboard and in the tray). Quick Connect is replaced by the sync code, shown on the Dashboard.",
+  "released": "2026-11-07T05:52:11.069Z"
+}

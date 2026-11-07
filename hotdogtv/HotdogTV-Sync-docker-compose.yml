@@ -1,0 +1,23 @@
+# Hotdog TV Sync in Docker. In the folder with this file:
+#   docker compose up -d        start it (it starts with the computer from then on, until stopped)
+#   docker compose logs         what it has said: at the first start, the setup link
+#   docker compose pull && docker compose up -d
+#                               update it, when the portal (Admin › Server) says a newer version is out
+services:
+  hotdogtv-sync:
+    image: ghcr.io/hotdog-tv/hotdogtv-sync:latest
+    container_name: hotdogtv-sync
+    restart: unless-stopped
+    ports:
+      - "8920:8920"      # devices reach it at this computer's address, port 8920 (the left-hand number)
+    volumes:
+      - data:/data       # its database, the key that protects it, and devices' backups: keep this
+    environment:
+      TZ: Etc/UTC        # your time zone, e.g. Australia/Perth (when its scheduled backups happen)
+      # A proxy in front of it in another container (Caddy, Nginx Proxy Manager, cloudflared...):
+      # that container's network, so visitors' own addresses are seen (sign-in limits go by them).
+      # A proxy on this computer itself is believed without it.
+      # HOTDOG_TRUSTED_PROXY: 172.18.0.0/16
+
+volumes:
+  data:
