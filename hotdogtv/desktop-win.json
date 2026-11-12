@@ -1,0 +1,8 @@
+{
+  "version": "0.2.14",
+  "url": "HotdogTV-Setup-0.2.14.exe",
+  "sha256": "510869b2169beeda1dceee1ef932a5560797aa995095c3e0fc341be696862db0",
+  "size": 28657164,
+  "notes": "Show / Hide Channels in a group, Reload in the multiview screen menu, remembers its window size and place, Silo watched and progress both ways, XC playlists now switch between HLS and TS properly, and problem reports leave out logins.",
+  "released": "2026-11-12T13:20:18.196Z"
+}

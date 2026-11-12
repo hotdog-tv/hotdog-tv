@@ -1,0 +1,25 @@
+{
+  "version": "0.5.14",
+  "url": "HotdogTV-Sync-0.5.14-linux-amd64.tar.gz",
+  "sha256": "4a68db3f2256a6cfbb6d753103fc6c305975d4bc9380a9e2a580ff078e8f9499",
+  "size": 5754433,
+  "notes": "Jellyfin and Silo servers can be added in the portal (Playlists › Add playlist), and every TV on the account signs itself in. Also the picture-in-picture position for multiview in Settings.",
+  "released": "2026-11-08T02:39:08.221Z",
+  "files": {
+    "amd64": {
+      "url": "HotdogTV-Sync-0.5.14-linux-amd64.tar.gz",
+      "sha256": "4a68db3f2256a6cfbb6d753103fc6c305975d4bc9380a9e2a580ff078e8f9499",
+      "size": 5754433
+    },
+    "arm64": {
+      "url": "HotdogTV-Sync-0.5.14-linux-arm64.tar.gz",
+      "sha256": "d275eaec3be952496b38dc7b8d691bfc55f00ddf58e83dd75372b4e3b13b2a6a",
+      "size": 5314875
+    },
+    "armv7": {
+      "url": "HotdogTV-Sync-0.5.14-linux-armv7.tar.gz",
+      "sha256": "6c20bf9043cb9039524d84f6e40d877f2b88bbd9931d405db826fc36023b21ac",
+      "size": 5473437
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "versionCode": 68,
+  "versionName": "0.13.10",
+  "apk": "hotdogtv-0.13.10.apk",
+  "sha256": "423f10a9a27195658e7cd6d738f409fc66eda9e2925851268c948d704fcc6893",
+  "size": 8486591,
+  "notes": "Hidden groups no longer show in Movies and Shows, subscription reminders, Jellyfin/Silo from the sync portal, and fixes for Xtream channels that wouldn't start. Full list: https://dl.auiptv.xyz/hotdogtv/changelog",
+  "changelog": "changelog",
+  "released": "2026-11-09T13:44:51.621Z"
+}

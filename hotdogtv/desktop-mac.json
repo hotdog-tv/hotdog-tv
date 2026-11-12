@@ -1,0 +1,8 @@
+{
+  "version": "0.2.14",
+  "url": "HotdogTV-0.2.14-mac.zip",
+  "sha256": "849c77183644e4ceeb366ce5b25f55eb3809067e258d309fdb718247396b007c",
+  "size": 74356325,
+  "notes": "Show / Hide Channels in a group, Reload in the multiview screen menu, remembers its window size and place, Silo watched and progress both ways, XC playlists now switch between HLS and TS properly, and problem reports leave out logins.",
+  "released": "2026-11-12T13:20:30.519Z"
+}

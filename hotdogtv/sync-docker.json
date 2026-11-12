@@ -1,0 +1,6 @@
+{
+  "version": "0.5.11",
+  "image": "ghcr.io/hotdog-tv/hotdogtv-sync:0.5.11",
+  "notes": "My Channels: keeps the 24/7 channels made in the apps in sync, with a My Channels tab in the portal.",
+  "released": "2026-11-05T07:00:53.540Z"
+}

@@ -1,0 +1,10 @@
+{
+  "versionCode": 73,
+  "versionName": "0.14.2",
+  "apk": "hotdogtv-0.14.2.apk",
+  "sha256": "30fbe8a6b18e7350ec5720c326c10113729c9c3dfb244a353730ab21df59acbf",
+  "size": 8526431,
+  "notes": "Multiview up to nine channels and new layouts: hold OK on a screen and choose Change layout. Full list: https://dl.auiptv.xyz/hotdogtv/changelog-beta",
+  "changelog": "changelog-beta",
+  "released": "2026-11-12T12:32:06.579Z"
+}

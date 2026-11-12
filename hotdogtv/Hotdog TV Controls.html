@@ -1,0 +1,668 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Hotdog TV Controls</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+  :root {
+    --bg: #F3F5F9;
+    --panel: #FFFFFF;
+    --panel-2: #E9EDF4;
+    --line: #D6DCE6;
+    --text: #141A24;
+    --muted: #5A6475;
+    --accent: #2458E0;
+    --accent-soft: #DCE6FC;
+    --key-bg: #1B2230;
+    --key-fg: #F2F5FA;
+    --key-edge: #0C1018;
+    --hold: #B8650A;
+    --hold-soft: #FCEBD5;
+    --none: #8A93A3;
+    --display: "Barlow Semi Condensed", "Arial Narrow", "Roboto Condensed", system-ui, sans-serif;
+    --body: "Source Sans 3", "Segoe UI", Roboto, system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #0B0E14;
+      --panel: #141A24;
+      --panel-2: #1B2230;
+      --line: #263041;
+      --text: #E8ECF3;
+      --muted: #8E98AA;
+      --accent: #5B8BFF;
+      --accent-soft: #1A2A4F;
+      --key-bg: #2A3345;
+      --key-fg: #F2F5FA;
+      --key-edge: #06080C;
+      --hold: #F0A43A;
+      --hold-soft: #3A2A12;
+      --none: #6B7486;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0B0E14;
+    --panel: #141A24;
+    --panel-2: #1B2230;
+    --line: #263041;
+    --text: #E8ECF3;
+    --muted: #8E98AA;
+    --accent: #5B8BFF;
+    --accent-soft: #1A2A4F;
+    --key-bg: #2A3345;
+    --key-fg: #F2F5FA;
+    --key-edge: #06080C;
+    --hold: #F0A43A;
+    --hold-soft: #3A2A12;
+    --none: #6B7486;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.5;
+    padding-inline: 16px;
+    padding-block: 0 64px;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; }
+
+  header.top {
+    padding-block: 40px 28px;
+    display: grid;
+    gap: 28px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
+    align-items: start;
+  }
+  @media (max-width: 860px) { header.top { grid-template-columns: 1fr; } }
+  .eyebrow {
+    font-family: var(--display);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 13px;
+    color: var(--accent);
+    margin: 0 0 6px;
+  }
+  h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(34px, 5vw, 52px);
+    line-height: 1.02;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  .lede { color: var(--muted); max-width: 60ch; margin: 0 0 18px; }
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    font-size: 14px;
+    color: var(--muted);
+    align-items: center;
+  }
+  .legend span { display: inline-flex; align-items: center; gap: 8px; }
+
+  /* Remote keys */
+  kbd.k {
+    display: inline-block;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    padding: 6px 9px 5px;
+    min-width: 30px;
+    text-align: center;
+    color: var(--key-fg);
+    background: var(--key-bg);
+    border-radius: 7px;
+    box-shadow: inset 0 -2px 0 var(--key-edge);
+    white-space: nowrap;
+  }
+  .hold {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--hold);
+    background: var(--hold-soft);
+    border-radius: 5px;
+    padding: 3px 6px 2px;
+    white-space: nowrap;
+  }
+  .tag {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 999px;
+    padding: 1px 8px;
+    white-space: nowrap;
+  }
+  .none { color: var(--none); font-style: italic; }
+
+  /* At-a-glance D-pad */
+  .glance {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 18px;
+  }
+  .glance h2 {
+    font-family: var(--display);
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 12px;
+  }
+  .pad {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: auto auto auto;
+    gap: 8px;
+  }
+  .pad .cell {
+    background: var(--panel-2);
+    border-radius: 12px;
+    padding: 10px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.25;
+    min-height: 78px;
+    justify-content: center;
+  }
+  .pad .ok { background: var(--accent-soft); border-radius: 50%; aspect-ratio: 1; max-width: 100%; }
+  .pad .blank { background: transparent; }
+  .row-keys {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .row-keys div {
+    background: var(--panel-2);
+    border-radius: 10px;
+    padding: 8px 10px;
+    font-size: 13px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    line-height: 1.25;
+  }
+
+  /* Jump nav */
+  nav.jump {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 5;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    padding-block: 10px;
+    margin-bottom: 8px;
+    overflow-x: auto;
+  }
+  nav.jump ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 6px;
+    white-space: nowrap;
+  }
+  nav.jump a {
+    display: inline-block;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 999px;
+  }
+  nav.jump a:hover, nav.jump a:focus-visible { color: var(--text); background: var(--panel-2); outline: none; }
+
+  section.screen { padding-top: 34px; scroll-margin-top: 64px; }
+  section.screen > h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 28px;
+    margin: 0 0 4px;
+  }
+  section.screen > p.where { color: var(--muted); margin: 0 0 16px; max-width: 70ch; }
+  h3 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 19px;
+    margin: 22px 0 8px;
+  }
+
+  .table-wrap { overflow-x: auto; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 15px;
+  }
+  th, td { text-align: left; vertical-align: top; padding: 10px 14px; }
+  thead th {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--panel-2);
+  }
+  tbody tr + tr td { border-top: 1px solid var(--line); }
+  td.btn { width: 34%; }
+  td.btn .keys { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  td.act .tag { margin-left: 6px; }
+  .sub { color: var(--muted); font-size: 14px; }
+
+  .grid2 { display: grid; gap: 18px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  @media (max-width: 820px) { .grid2 { grid-template-columns: 1fr; } }
+
+  footer {
+    margin-top: 44px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 14px;
+  }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <p class="eyebrow">Hotdog TV for Android TV · 0.9.0-beta1</p>
+      <h1>Remote controls</h1>
+      <p class="lede">What every button on your remote does out of the box, screen by screen. Most of the player and TV Guide buttons can be changed in <strong>Settings › Remote Control</strong>.</p>
+      <div class="legend">
+        <span><kbd class="k">OK</kbd> press</span>
+        <span><span class="hold">Hold</span> hold for about half a second</span>
+        <span><span class="tag">Changeable</span> set it in Settings › Remote Control</span>
+        <span><span class="none">Nothing yet</span> planned, does nothing today</span>
+      </div>
+    </div>
+
+    <aside class="glance" aria-label="Watching TV at a glance">
+      <h2>Watching TV at a glance</h2>
+      <div class="pad">
+        <div class="cell blank"></div>
+        <div class="cell"><kbd class="k">▲</kbd>Preview previous channel</div>
+        <div class="cell blank"></div>
+        <div class="cell"><kbd class="k">◀</kbd>Last channel</div>
+        <div class="cell ok"><kbd class="k">OK</kbd>Info bar</div>
+        <div class="cell"><kbd class="k">▶</kbd>TV Guide</div>
+        <div class="cell blank"></div>
+        <div class="cell"><kbd class="k">▼</kbd>Preview next channel</div>
+        <div class="cell blank"></div>
+      </div>
+      <div class="row-keys">
+        <div><kbd class="k">Back</kbd>TV Guide</div>
+        <div><span class="hold">Hold</span><kbd class="k">Back</kbd>Exit</div>
+        <div><span class="hold">Hold</span><kbd class="k">OK</kbd>Menu bar</div>
+        <div><kbd class="k">⏯</kbd>Pause / play</div>
+      </div>
+    </aside>
+  </header>
+
+  <nav class="jump" aria-label="Screens">
+    <ul>
+      <li><a href="#watching">Watching TV</a></li>
+      <li><a href="#overlays">Info bar &amp; menu</a></li>
+      <li><a href="#rewind">Rewind &amp; catch-up</a></li>
+      <li><a href="#guide">TV Guide</a></li>
+      <li><a href="#channels">Channel list</a></li>
+      <li><a href="#vod">Movies &amp; Shows</a></li>
+      <li><a href="#multiview">Multiview</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Watching TV ─────────────────────────────────────────────── -->
+  <section class="screen" id="watching">
+    <h2>Watching TV</h2>
+    <p class="where">Full-screen live TV with nothing else on screen. When the app opens, the channel shows briefly in a small bar at the bottom; the buttons already work as below.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Button</th><th>What it does</th></tr></thead>
+        <tbody>
+          <tr><td class="btn"><div class="keys"><kbd class="k">▲</kbd> <kbd class="k">▼</kbd></div></td><td class="act">Preview the previous / next channel in the bar. Keep pressing to step through; <kbd class="k">OK</kbd> switches to it, <kbd class="k">Back</kbd> cancels. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k">CH+</kbd> <kbd class="k">CH−</kbd></div></td><td class="act">Preview the next / previous channel, same as above. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k">◀</kbd></div></td><td class="act">Jump back to the last channel you watched. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><span class="hold">Hold</span><kbd class="k">◀</kbd></div></td><td class="act">Channel list. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k">▶</kbd></div></td><td class="act">TV Guide. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><span class="hold">Hold</span><kbd class="k">▶</kbd></div></td><td class="act">Info bar with the programme description. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k">OK</kbd></div></td><td class="act">Info bar with the recent-channels strip. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><span class="hold">Hold</span><kbd class="k">OK</kbd></div></td><td class="act">Menu bar (Search, Guide, Movies, Shows, Multiview, Captions, Audio, Settings…). <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k">Back</kbd></div></td><td class="act">TV Guide. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><span class="hold">Hold</span><kbd class="k">Back</kbd></div></td><td class="act">Exit Hotdog TV straight away. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k">⏯</kbd></div></td><td class="act">Pause / play. With Timeshift on, pausing a live channel starts watching from the buffer (see <a href="#rewind">Rewind</a>). <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><span class="hold">Hold</span><kbd class="k">⏯</kbd></div></td><td class="act">Back to live. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k">⏪</kbd> <kbd class="k">⏩</kbd></div></td><td class="act">Preview the previous / next channel. With Timeshift on, they rewind and fast-forward instead. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k">⏹</kbd></div></td><td class="act">Stop playback. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k">Menu</kbd></div></td><td class="act">Menu bar. <span class="sub">Hold Menu: TV Guide, on remotes where the system doesn't keep that for itself (the Shield does).</span> <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k">Vol +</kbd> <kbd class="k">Vol −</kbd> <kbd class="k">Mute</kbd></div></td><td class="act">Volume.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Buttons on other remotes</h3>
+    <p class="where">The NVIDIA Shield remote doesn't have these, but many TV and universal remotes do.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Button</th><th>What it does</th></tr></thead>
+        <tbody>
+          <tr><td class="btn"><div class="keys"><kbd class="k">Guide</kbd></div></td><td class="act">TV Guide. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k">Info</kbd></div></td><td class="act">Info bar. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k">⌫</kbd></div></td><td class="act">TV Guide, opened on the categories. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k">Record</kbd></div></td><td class="act"><span class="none">Nothing yet</span> (planned: start/stop recording). Use Record in the info bar's controls for now. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k" style="background:#B3261E">Red</kbd></div></td><td class="act">TV Guide. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k" style="background:#1E7F3A">Green</kbd></div></td><td class="act">TV Guide, opened on the categories. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k" style="background:#A07A00">Yellow</kbd></div></td><td class="act">Info bar with the playback controls. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k" style="background:#1F4FB8">Blue</kbd></div></td><td class="act">Settings. <span class="tag">Changeable</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ── Info bar & menu ─────────────────────────────────────────── -->
+  <section class="screen" id="overlays">
+    <h2>Info bar &amp; menu</h2>
+    <p class="where">The bars that come up over the picture. In all of them, <kbd class="k">Back</kbd> closes everything and returns to the picture. They close by themselves after a few seconds of no presses.</p>
+    <div class="grid2">
+      <div>
+        <h3>Info bar</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Button</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td class="btn"><div class="keys"><kbd class="k">◀</kbd> <kbd class="k">▶</kbd></div></td><td class="act">Move along the strip: Channels, History, then your recent channels. <span class="sub">History does nothing yet.</span></td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">OK</kbd></div></td><td class="act">Channels opens the channel list; a recent channel plays it.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">▲</kbd></div></td><td class="act">Playback controls.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">▼</kbd></div></td><td class="act">Menu bar.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h3>Playback controls</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Button</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td class="btn"><div class="keys"><kbd class="k">◀</kbd> <kbd class="k">▶</kbd></div></td><td class="act">Rewind, Play/Pause, Fast-forward, Watch from start (catch-up channels), Live, Record.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">OK</kbd></div></td><td class="act">Use the highlighted button.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">▲</kbd></div></td><td class="act">Seek bar: <kbd class="k">◀</kbd> <kbd class="k">▶</kbd> skip back and forward, <kbd class="k">OK</kbd> or <kbd class="k">▼</kbd> leaves it.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">▼</kbd></div></td><td class="act">Back to the info bar.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h3>Menu bar</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Button</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td class="btn"><div class="keys"><kbd class="k">◀</kbd> <kbd class="k">▶</kbd></div></td><td class="act">Move along: Search, TV Guide, Movies, Shows, Recordings, Multiview, My list, PiP, Captions, Audio, Video, Settings. Wraps round at the ends. <span class="sub">My list and PiP do nothing yet.</span></td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">OK</kbd></div></td><td class="act">Open the highlighted item.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">▲</kbd></div></td><td class="act">Back to the info bar.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h3>Captions, Audio and Video panels</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Button</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td class="btn"><div class="keys"><kbd class="k">▲</kbd> <kbd class="k">▼</kbd></div></td><td class="act">Move through the options.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">OK</kbd></div></td><td class="act">Choose it. Audio and Video close straight away.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Rewind & catch-up ───────────────────────────────────────── -->
+  <section class="screen" id="rewind">
+    <h2>Rewind &amp; catch-up</h2>
+    <p class="where">Turn on <strong>Settings › Timeshift › Enable Timeshift</strong> (it's off to begin with) and live channels are buffered while you watch, so you can pause and rewind. Channels with catch-up can also go back to earlier programmes from the TV Guide. Which buttons seek is set under Seeking Options in <strong>Settings › Remote Control</strong>.</p>
+    <div class="grid2">
+      <div>
+        <h3>Live channel with Timeshift on</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Button</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td class="btn"><div class="keys"><kbd class="k">⏪</kbd></div></td><td class="act">Rewind, with the seek bar on screen. Going past the start of the buffer carries on into catch-up where the channel has it.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">⏩</kbd></div></td><td class="act">Fast-forward (only once you're behind live).</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">⏯</kbd></div></td><td class="act">Pause / play, with the seek bar on screen.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">◀</kbd> <kbd class="k">▶</kbd></div></td><td class="act">Skip back / forward, but only after you've rewound or paused. At live they do their normal job.</td></tr>
+              <tr><td class="btn"><div class="keys"><span class="hold">Hold</span><kbd class="k">⏯</kbd></div></td><td class="act">Back to live.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h3>Watching catch-up</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Button</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td class="btn"><div class="keys"><kbd class="k">⏪</kbd> <kbd class="k">⏩</kbd></div></td><td class="act">Rewind / fast-forward through the programme.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">◀</kbd> <kbd class="k">▶</kbd></div></td><td class="act">Skip back / forward.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">⏯</kbd></div></td><td class="act">Pause / play.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">▲</kbd> <kbd class="k">▼</kbd></div></td><td class="act">Channel preview as usual. <span class="sub">Can be set to seek instead.</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="sub">With Timeshift off, <kbd class="k">⏪</kbd> on a catch-up channel rewinds from live into catch-up.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TV Guide ────────────────────────────────────────────────── -->
+  <section class="screen" id="guide">
+    <h2>TV Guide</h2>
+    <p class="where">The programme grid, with the current channel playing in the corner.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Button</th><th>What it does</th></tr></thead>
+        <tbody>
+          <tr><td class="btn"><div class="keys"><kbd class="k">▲</kbd> <kbd class="k">▼</kbd></div></td><td class="act">Move between channels.</td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k">◀</kbd> <kbd class="k">▶</kbd></div></td><td class="act">Earlier / later programmes. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k">OK</kbd></div></td><td class="act">Watch the channel. On an earlier programme with catch-up, watch that programme. On a future programme, open its menu. On the channel already playing, go back to it full screen. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><span class="hold">Hold</span><kbd class="k">OK</kbd></div></td><td class="act">Programme menu. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k">Back</kbd></div></td><td class="act">Categories (and the left menu). <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><span class="hold">Hold</span><kbd class="k">Back</kbd></div></td><td class="act">Back to watching, full screen. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k">CH+</kbd> <kbd class="k">CH−</kbd> <kbd class="k">⏪</kbd> <kbd class="k">⏩</kbd></div></td><td class="act">Page up / down through the channels. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k">⏯</kbd></div></td><td class="act">Programme description. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><span class="hold">Hold</span><kbd class="k">⏯</kbd></div></td><td class="act">Open the channel in another video app (VLC, MX Player…). <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k">⏹</kbd></div></td><td class="act">Add to / remove from Favourites. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k">Menu</kbd></div></td><td class="act">Programme menu. <span class="sub">Hold Menu: Search.</span> <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k">Guide</kbd> <kbd class="k">Info</kbd> <kbd class="k">⌫</kbd></div></td><td class="act"><span class="sub">Other remotes:</span> Guide opens the categories, Info shows the description, Backspace goes back to watching. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k" style="background:#B3261E">Red</kbd> <kbd class="k" style="background:#1E7F3A">Green</kbd> <kbd class="k" style="background:#A07A00">Yellow</kbd> <kbd class="k" style="background:#1F4FB8">Blue</kbd></div></td><td class="act"><span class="sub">Other remotes:</span> Red toggles Favourites, Green opens the channel's menu, Yellow <span class="none">does nothing yet</span>, Blue opens Settings. <span class="tag">Changeable</span></td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k">Record</kbd></div></td><td class="act"><span class="none">Nothing yet</span> (planned: Recordings). Use Schedule recording in the programme menu. <span class="tag">Changeable</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid2">
+      <div>
+        <h3>Categories</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Button</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td class="btn"><div class="keys"><kbd class="k">▲</kbd> <kbd class="k">▼</kbd></div></td><td class="act">Move through the categories; the guide shows each one as you go. Wraps round at the ends.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">OK</kbd> <kbd class="k">▶</kbd></div></td><td class="act">Choose the category and go back to the grid.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">OK</kbd></div></td><td class="act">On a playlist name: fold or unfold its categories.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">◀</kbd> <kbd class="k">Back</kbd></div></td><td class="act">Left menu.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h3>Left menu</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Button</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td class="btn"><div class="keys"><kbd class="k">▲</kbd> <kbd class="k">▼</kbd></div></td><td class="act">Search, Live TV, Movies, Shows, Recordings, Settings. Starts on the section you're in.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">OK</kbd></div></td><td class="act">Go there.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">▶</kbd></div></td><td class="act">Back to the categories.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">Back</kbd></div></td><td class="act">Exit Hotdog TV. Press twice when "Confirm exit" is on (it is by default).</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <h3>Programme menu</h3>
+    <p class="where"><kbd class="k">▲</kbd> <kbd class="k">▼</kbd> to move, <kbd class="k">OK</kbd> to choose, <kbd class="k">Back</kbd> to close. Items depend on the programme: Watch catch-up, Add to Multiview, Remind, Schedule recording, Custom recording, Add to My list, Add to Favourites, Hide channel, Hide group, Program description.</p>
+  </section>
+
+  <!-- ── Channel list ───────────────────────────────────────────── -->
+  <section class="screen" id="channels">
+    <h2>Channel list</h2>
+    <p class="where">The list that slides in from the left. Open it with <span class="hold">Hold</span> <kbd class="k">◀</kbd> while watching, or Channels in the info bar.</p>
+    <div class="grid2">
+      <div>
+        <h3>Channels</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Button</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td class="btn"><div class="keys"><kbd class="k">▲</kbd> <kbd class="k">▼</kbd></div></td><td class="act">Move through the channels. Wraps round at the ends.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">OK</kbd></div></td><td class="act">Watch the channel.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">◀</kbd></div></td><td class="act">Groups.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">Menu</kbd></div></td><td class="act">Hide the channel.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">Back</kbd></div></td><td class="act">Close the list.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h3>Groups</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Button</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td class="btn"><div class="keys"><kbd class="k">▲</kbd> <kbd class="k">▼</kbd></div></td><td class="act">Move through the groups.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">OK</kbd> <kbd class="k">▶</kbd></div></td><td class="act">Show that group's channels.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">OK</kbd></div></td><td class="act">On a playlist name: fold or unfold it.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">Back</kbd></div></td><td class="act">Close the list.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Movies & Shows ─────────────────────────────────────────── -->
+  <section class="screen" id="vod">
+    <h2>Movies &amp; Shows</h2>
+    <p class="where">Open them from the menu bar or the left menu.</p>
+    <div class="grid2">
+      <div>
+        <h3>Home rows</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Button</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td class="btn"><div class="keys"><kbd class="k">▲</kbd> <kbd class="k">▼</kbd> <kbd class="k">◀</kbd> <kbd class="k">▶</kbd></div></td><td class="act">Move around the rows.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">OK</kbd></div></td><td class="act">Open the movie or show. On a show in Continue Watching, carry on from where you stopped.</td></tr>
+              <tr><td class="btn"><div class="keys"><span class="hold">Hold</span><kbd class="k">OK</kbd></div></td><td class="act">On Continue Watching: Play, Play in External Player, Open Series Info (or Movie Info).</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">Back</kbd></div></td><td class="act">Left menu. From there, <kbd class="k">Back</kbd> returns to live TV.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h3>Category grid</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Button</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td class="btn"><div class="keys"><kbd class="k">◀</kbd> <kbd class="k">Back</kbd></div></td><td class="act">From the first column: categories and the left menu slide in.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">▲</kbd> <kbd class="k">▼</kbd></div></td><td class="act">In the categories: the grid shows each category as you go.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">OK</kbd> <kbd class="k">▶</kbd></div></td><td class="act">Choose the category and go back to the grid.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">Back</kbd></div></td><td class="act">From the categories: left menu. Again: back to the Movies or Shows home.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h3>Movie or show page</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Button</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td class="btn"><div class="keys"><kbd class="k">◀</kbd> <kbd class="k">▶</kbd></div></td><td class="act">Movies: Play or Resume, Play from start, Play in External Player, Trailer, Favourite.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">▲</kbd> <kbd class="k">▼</kbd></div></td><td class="act">Shows: move between the buttons, seasons and episodes.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">OK</kbd></div></td><td class="act">Use the button, or play the episode.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">Back</kbd></div></td><td class="act">Back to where you came from.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h3>Playing a movie or episode</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Button</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td class="btn"><div class="keys"><kbd class="k">◀</kbd> <kbd class="k">▶</kbd> <kbd class="k">⏪</kbd> <kbd class="k">⏩</kbd></div></td><td class="act">Skip back / forward, with the seek bar.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">⏯</kbd></div></td><td class="act">Pause / play.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">▲</kbd> <kbd class="k">▼</kbd> <kbd class="k">OK</kbd></div></td><td class="act">Info bar with the controls. <kbd class="k">▼</kbd> from the controls opens the menu bar.</td></tr>
+              <tr><td class="btn"><div class="keys"><kbd class="k">Back</kbd></div></td><td class="act">Stop and go back to Movies, Shows or Recordings. Your place is saved.</td></tr>
+              <tr><td class="btn"><div class="keys"><span class="hold">Hold</span><kbd class="k">Back</kbd></div></td><td class="act">Exit Hotdog TV.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Multiview ─────────────────────────────────────────────── -->
+  <section class="screen" id="multiview">
+    <h2>Multiview</h2>
+    <p class="where">Up to four channels at once. Start it from Multiview in the menu bar, or Add to Multiview in the TV Guide's programme menu. The screen with the blue frame is the one your buttons control.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Button</th><th>What it does</th></tr></thead>
+        <tbody>
+          <tr><td class="btn"><div class="keys"><kbd class="k">▲</kbd> <kbd class="k">▼</kbd> <kbd class="k">◀</kbd> <kbd class="k">▶</kbd></div></td><td class="act">Move between screens. Sound follows the highlighted screen.</td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k">OK</kbd></div></td><td class="act">On a smaller screen: make it the main one. On the main screen: open the screen menu.</td></tr>
+          <tr><td class="btn"><div class="keys"><span class="hold">Hold</span><kbd class="k">OK</kbd> <kbd class="k">Menu</kbd></div></td><td class="act">Screen menu: change channel, layout, Watch full screen, Close Multiview and more.</td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k">CH+</kbd> <kbd class="k">CH−</kbd></div></td><td class="act">Next / previous channel on the highlighted screen.</td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k">Back</kbd></div></td><td class="act">TV Guide. Multiview stays running; leave it from the screen menu.</td></tr>
+          <tr><td class="btn"><div class="keys"><kbd class="k">⏯</kbd> <kbd class="k">⏪</kbd> <kbd class="k">⏩</kbd> <kbd class="k">⏹</kbd></div></td><td class="act">On the channel you started from: pause, rewind and fast-forward as usual; Stop goes back to live.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Defaults for Hotdog TV 0.9.0-beta1 on Android TV. If you've changed buttons in Settings › Remote Control, yours will differ.
+  </footer>
+</div>
+
+</body></html>

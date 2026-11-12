@@ -1,0 +1,8 @@
+{
+  "version": "0.5.14",
+  "url": "HotdogTV-Sync-Setup-0.5.14.exe",
+  "sha256": "12f07e8e080e06a652cdb4791fedcee19bace39928b10df06273342cca18922c",
+  "size": 10460285,
+  "notes": "Jellyfin and Silo servers can be added in the portal (Playlists › Add playlist), and every TV on the account signs itself in. Also the picture-in-picture position for multiview in Settings.",
+  "released": "2026-11-08T02:39:04.835Z"
+}
