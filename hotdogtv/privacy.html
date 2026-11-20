@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#fff4dc">
+<title>Hotdog TV — Privacy Policy</title>
+<!--
+  Privacy policy for Hotdog TV (Android, desktop, Apple TV). Source: scripts/downloads-site/ in the
+  app's repo; scripts/publish-repo.js copies it into the downloads repo at every release, so edit it
+  there, not in the downloads repo. Required for TestFlight external testing.
+-->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --page:#fff4dc; --card:#fffaf0; --crust:#f3d9a4; --crust-dark:#e6bf78;
+  --ink:#4a2212; --ink-mid:#74472f; --ink-low:#9a7258;
+  --red:#e12c27; --red-dark:#c41f17;
+}
+*{box-sizing:border-box}
+html{background:var(--page)}
+body{margin:0;min-height:100vh;color:var(--ink);
+  background:radial-gradient(44rem 26rem at 50% 4rem, #ffe7b3, transparent 70%), var(--page);
+  background-repeat:no-repeat;
+  font:16px/1.65 Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased}
+main{max-width:42rem;margin:0 auto;padding:2.25rem 16px 4rem}
+a{color:var(--red-dark);font-weight:700}
+h1{font:400 clamp(1.7rem,6vw,2.1rem)/1.2 "Lilita One",Nunito,sans-serif;letter-spacing:.01em;margin:0 0 .3rem;
+  background:linear-gradient(var(--red) 56%, var(--red-dark) 56%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.updated{color:var(--ink-low);font-size:.88rem;font-weight:600;margin:0 0 2rem}
+h2{font:400 1.2rem/1.3 "Lilita One",Nunito,sans-serif;letter-spacing:.01em;margin:1.8rem 0 .6rem;color:var(--ink)}
+p,li{color:var(--ink-mid)}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.3rem 0}
+.card{background:var(--card);border:2px solid var(--crust);border-radius:20px;box-shadow:0 5px 0 var(--crust-dark);
+  padding:1.4rem 1.5rem;margin-top:1.5rem}
+footer{margin-top:2.5rem;text-align:center}
+footer a{color:var(--ink-low);font-weight:600;text-decoration:none}
+</style>
+</head>
+<body>
+<main>
+<h1>Hotdog TV — Privacy Policy</h1>
+<p class="updated">Last updated 3 November 2026</p>
+
+<p>Hotdog TV is a personal IPTV/media player app (Android TV, desktop, Apple TV) built for use with
+a playlist or server you already have access to — such as an Xtream Codes, M3U, Jellyfin or Silo
+provider you supply yourself. This page explains what the app does with your data.</p>
+
+<h2>What the app does</h2>
+<ul>
+<li>Connects directly to the IPTV/media server address, username and password <strong>you enter</strong>.
+These credentials are stored only on your own device(s), never sent to us.</li>
+<li>Optionally syncs settings, watch progress, favourites and recordings between your own devices via a
+<strong>sync server you run yourself</strong> (self-hosted, or one you otherwise control). We do not operate
+a central sync service that stores your data.</li>
+<li>Looks up film/show titles, artwork and air dates from <a href="https://www.themoviedb.org/">TMDB</a>
+to show posters and guide information. Only the title/ids needed for that lookup are sent to TMDB — see
+<a href="https://www.themoviedb.org/privacy-policy">TMDB's own privacy policy</a>.</li>
+<li>Looks up song lyrics from <a href="https://lrclib.net/">lrclib.net</a> when showing synced lyrics for
+radio playback.</li>
+<li>Checks for app updates against our own download server, and can fetch TV guide (EPG) data from the
+source your playlist provider or you configure.</li>
+</ul>
+
+<h2>What we don't do</h2>
+<ul>
+<li>No analytics, advertising or tracking SDKs of any kind.</li>
+<li>No account system, sign-up or login for the app itself.</li>
+<li>We never see your IPTV provider credentials, viewing history or recordings — those stay between your
+device(s) and the server(s) you point them at.</li>
+</ul>
+
+<h2>Diagnostics you choose to send</h2>
+<p>The app has a "Report a Problem" feature. It only runs, and only sends anything, when you explicitly
+trigger it — nothing is collected automatically in the background. What you choose to send may include
+device/app version info, recent logs and a description you write, sent to our report endpoint for the
+sole purpose of fixing the issue you're reporting.</p>
+
+<h2>Children's privacy</h2>
+<p>Hotdog TV is not directed at children and does not knowingly collect personal information from anyone.</p>
+
+<h2>Changes to this policy</h2>
+<p>If this policy changes, the "last updated" date above will change too. Continued use of the app after
+an update means you accept the revised policy.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy: <a href="mailto:robbo3939@gmail.com">robbo3939@gmail.com</a></p>
+
+<footer><a href="./">&larr; Hotdog TV downloads</a></footer>
+</main>
+</body>
+</html>

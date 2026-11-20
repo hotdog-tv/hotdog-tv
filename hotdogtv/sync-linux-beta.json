@@ -1,0 +1,25 @@
+{
+  "version": "0.6.2",
+  "url": "HotdogTV-Sync-0.6.2-linux-amd64.tar.gz",
+  "sha256": "555813c3e1876de0d6a5f4180d9f5b9c53844b67c0fbf8bcaa2cb4a21c4ff45f",
+  "size": 6545435,
+  "notes": "Reminders from the portal: set one in a channel's guide, at the start or a time you pick, for one of your TVs or all of them. Custom recording (start early, run on) in the portal guide. Deleting a recording whose drive isn't plugged in now says so instead of claiming it's gone.",
+  "released": "2026-11-20T23:26:08.788Z",
+  "files": {
+    "amd64": {
+      "url": "HotdogTV-Sync-0.6.2-linux-amd64.tar.gz",
+      "sha256": "555813c3e1876de0d6a5f4180d9f5b9c53844b67c0fbf8bcaa2cb4a21c4ff45f",
+      "size": 6545435
+    },
+    "arm64": {
+      "url": "HotdogTV-Sync-0.6.2-linux-arm64.tar.gz",
+      "sha256": "25e66711002b37e88501ff06bcf1c95fa7ad0602ed9f02eb70fb792d996b2219",
+      "size": 6065486
+    },
+    "armv7": {
+      "url": "HotdogTV-Sync-0.6.2-linux-armv7.tar.gz",
+      "sha256": "bf48987a6af0820fc15f82a063cd61c3a618cfbad33baf0715dd953596919436",
+      "size": 6235137
+    }
+  }
+}

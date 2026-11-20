@@ -1,0 +1,10 @@
+{
+  "versionCode": 83,
+  "versionName": "0.15.1",
+  "apk": "hotdogtv-0.15.1.apk",
+  "sha256": "467e7939c77753edf1a60c6004a0eee694de060c2d2645cf52b2e37d957c6fa1",
+  "size": 8724532,
+  "notes": "Add a playlist from your phone: scan the code on the TV and type the details there. Record on the sync server (needs sync server 0.6.0), and Christmas radio scenes.",
+  "changelog": "changelog",
+  "released": "2026-11-17T14:25:27.971Z"
+}

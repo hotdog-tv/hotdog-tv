@@ -1,0 +1,8 @@
+{
+  "version": "0.6.1",
+  "url": "HotdogTV-Sync-0.6.1-mac.tar.gz",
+  "sha256": "99633e6ab2d627c4d420d70af971331e1786c899bfd5f12edd9df13ed566a55d",
+  "size": 12719458,
+  "notes": "Reorder channels and groups: in the portal (Channels › Reorder) and kept in step with the order set on your TVs. Time Format (12 or 24 hour) in the portal's settings, and a fix for making a new Hotdog Channel.",
+  "released": "2026-11-19T00:30:25.038Z"
+}

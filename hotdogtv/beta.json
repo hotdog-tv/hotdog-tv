@@ -1,0 +1,10 @@
+{
+  "versionCode": 86,
+  "versionName": "0.15.2-beta3",
+  "apk": "hotdogtv-0.15.2-beta3.apk",
+  "sha256": "8b26d58937b2df70991d65c0698eb4d55b8e2e9b00d0e14845856d0bc1f3aefb",
+  "size": 8473611,
+  "notes": "Custom reminders: hold OK on a programme and pick the time, such as when a match starts after the pre-show. Reminders set in the sync portal pop up on your TV (needs sync server 0.6.2). Full list: https://dl.auiptv.xyz/hotdogtv/changelog-beta",
+  "changelog": "changelog-beta",
+  "released": "2026-11-20T23:40:13.474Z"
+}

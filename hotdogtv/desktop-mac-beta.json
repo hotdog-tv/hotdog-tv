@@ -1,0 +1,8 @@
+{
+  "version": "0.3.4",
+  "url": "HotdogTV-0.3.4-mac.zip",
+  "sha256": "3b6b4b6c003495218c02372c81e98dbd9235c3f7e713d414e4ad909ae5701311",
+  "size": 75481148,
+  "notes": "Remind me at...: right-click a programme in the guide and pick the time of the reminder (later on in a programme, say after a pre-show). Reminders set in the sync portal pop up here too (needs sync server 0.6.2).",
+  "released": "2026-11-20T23:48:31.597Z"
+}

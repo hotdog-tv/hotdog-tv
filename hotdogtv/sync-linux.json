@@ -1,0 +1,25 @@
+{
+  "version": "0.6.1",
+  "url": "HotdogTV-Sync-0.6.1-linux-amd64.tar.gz",
+  "sha256": "47123faf17a1bc0d40a8b4b53231b76983f09abcc0e77cff0607f0b0536bc7d9",
+  "size": 6536527,
+  "notes": "Reorder channels and groups: in the portal (Channels › Reorder) and kept in step with the order set on your TVs. Time Format (12 or 24 hour) in the portal's settings, and a fix for making a new Hotdog Channel.",
+  "released": "2026-11-19T00:30:20.578Z",
+  "files": {
+    "amd64": {
+      "url": "HotdogTV-Sync-0.6.1-linux-amd64.tar.gz",
+      "sha256": "47123faf17a1bc0d40a8b4b53231b76983f09abcc0e77cff0607f0b0536bc7d9",
+      "size": 6536527
+    },
+    "arm64": {
+      "url": "HotdogTV-Sync-0.6.1-linux-arm64.tar.gz",
+      "sha256": "72fbba1556ca336b92e261312ebdbb7751a8acb77b512922dff8219620ad1089",
+      "size": 6054305
+    },
+    "armv7": {
+      "url": "HotdogTV-Sync-0.6.1-linux-armv7.tar.gz",
+      "sha256": "0483832da55d81f38ae5d256838d96489ab15ab052cff57181a7c41a4a215e56",
+      "size": 6225859
+    }
+  }
+}
