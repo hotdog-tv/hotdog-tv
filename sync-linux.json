@@ -1,0 +1,25 @@
+{
+  "version": "0.6.5",
+  "url": "HotdogTV-Sync-0.6.5-linux-amd64.tar.gz",
+  "sha256": "75824aa8eba9f0b6316e0a3bcd221b0f019b7666dbdef6fae9c4e3bf939c1acd",
+  "size": 6594082,
+  "notes": "Sync server 0.6.5: manage Favourite Groups (the star beside each group on the Channels page, and the list in Settings > Appearance > Groups) and the new Loading Spinner settings from the portal.",
+  "released": "2026-11-27T09:05:16.833Z",
+  "files": {
+    "amd64": {
+      "url": "HotdogTV-Sync-0.6.5-linux-amd64.tar.gz",
+      "sha256": "75824aa8eba9f0b6316e0a3bcd221b0f019b7666dbdef6fae9c4e3bf939c1acd",
+      "size": 6594082
+    },
+    "arm64": {
+      "url": "HotdogTV-Sync-0.6.5-linux-arm64.tar.gz",
+      "sha256": "f86c7baf6b4ded450f70c016a1e2a5af781729510ca814e8d8f2fcb47ca80ddc",
+      "size": 6113076
+    },
+    "armv7": {
+      "url": "HotdogTV-Sync-0.6.5-linux-armv7.tar.gz",
+      "sha256": "710c86615866ed6de54a30304ad5e2ad7aa63a4d07bf57588454cfa5f38927ec",
+      "size": 6281949
+    }
+  }
+}

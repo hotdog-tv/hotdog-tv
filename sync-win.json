@@ -1,0 +1,8 @@
+{
+  "version": "0.6.5",
+  "url": "HotdogTV-Sync-Setup-0.6.5.exe",
+  "sha256": "3cceed7dbaa48d186e5b3c7783dbf4a4cf6cdb002297bd2527737521cae2012e",
+  "size": 11573183,
+  "notes": "Sync server 0.6.5: manage Favourite Groups (the star beside each group on the Channels page, and the list in Settings > Appearance > Groups) and the new Loading Spinner settings from the portal.",
+  "released": "2026-11-27T09:05:13.276Z"
+}

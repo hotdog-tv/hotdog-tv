@@ -1,0 +1,10 @@
+{
+  "versionCode": 89,
+  "versionName": "0.15.3",
+  "apk": "hotdogtv-0.15.3.apk",
+  "sha256": "d44f314e63ee3ec0896528524754e2a827d71ab5707c7433d76677899384f20b",
+  "size": 8492639,
+  "notes": "Fixes the app closing straight away after updating to 0.15.2 on some boxes. Full list: https://dl.auiptv.xyz/hotdogtv/changelog",
+  "changelog": "changelog",
+  "released": "2026-11-22T15:30:17.732Z"
+}

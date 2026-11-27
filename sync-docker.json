@@ -1,0 +1,6 @@
+{
+  "version": "0.6.5",
+  "image": "ghcr.io/hotdog-tv/hotdogtv-sync:0.6.5",
+  "notes": "Sync server 0.6.5: manage Favourite Groups (the star beside each group on the Channels page, and the list in Settings > Appearance > Groups) and the new Loading Spinner settings from the portal.",
+  "released": "2026-11-27T09:05:25.414Z"
+}

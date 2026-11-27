@@ -1,0 +1,10 @@
+{
+  "versionCode": 93,
+  "versionName": "0.15.4-beta4",
+  "apk": "hotdogtv-0.15.4-beta4.apk",
+  "sha256": "1b9b2c4b8acc7897350ec0753ffa4f9c702c846d1737b3b650012c5d9983b160",
+  "size": 8549187,
+  "notes": "Hotdog TV 0.15.4 beta 4: Favourite Groups (hold OK on a group > Add to Favourite Groups, at the top of the groups list and on your other devices), and a new loading spinner with a choice of six in Settings > Appearance.",
+  "changelog": "changelog-beta",
+  "released": "2026-11-27T07:57:53.307Z"
+}
